@@ -13,7 +13,7 @@
 
   require_once('./php-Action/MySQLConection.php');
 
-  $connect_object = MySQLConnection::DB_Connect('userdb');
+  $connect_object = MySQLConnection::DB_Connect('db_hw');
 
 ?>
 

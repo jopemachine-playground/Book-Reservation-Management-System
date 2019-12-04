@@ -16,7 +16,7 @@
 
   // DB에서 PK (ID) 를 찾음
   $searchUserID = "
-    SELECT * FROM usersinfotbl WHERE ID = '$ID'
+    SELECT * FROM user WHERE ID = '$ID'
   ";
 
   $ret = mysqli_query($connect_object, $searchUserID);

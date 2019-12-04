@@ -34,7 +34,7 @@ if($reg_ID == 0){
 
 // DB에서 PK (ID) 중복 검사
 $searchUserID = "
-  SELECT * FROM usersinfotbl
+  SELECT * FROM user
 ";
 
 $ret = mysqli_query($connect_object, $searchUserID);
