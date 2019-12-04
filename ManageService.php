@@ -98,9 +98,9 @@
       <div class="row">
         <div class="col-md-3" style="margin-bottom: 15px;">
           <div id="AnalysisButtons" class="list-group">
-            <a id="Analysis-recentComments" href="#" class="list-group-item sideButton active" onclick="selectButtons(this.id)">도서 예약</a>
-            <a id="Analysis-positiveness" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">대출</a>
-            <a id="Analysis-popularness" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">검색</a>
+            <a id="Analysis-reserveBook" href="#" class="list-group-item sideButton active" onclick="selectButtons(this.id)">도서 예약</a>
+            <a id="Analysis-borrow" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">대출</a>
+            <a id="Analysis-search" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">검색</a>
           </div>
         </div>
 
@@ -125,7 +125,7 @@
     <!-- MDB 라이브러리 추가하기 -->
     <script src="./lib/mdb.min.js"></script>
     <!-- 커스텀 자바스크립트 추가하기 -->
-    <script src="./js/CommentManageService.js"></script>
+    <script src="./js/ManageService.js"></script>
     <!-- Chart JS 추가 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 
