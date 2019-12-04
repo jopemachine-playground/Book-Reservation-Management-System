@@ -1,0 +1,34 @@
+
+.comment-positive01{
+  background: linear-gradient( to right, #edfff3, #f2f2f2 95%) !important;
+}
+.comment-positive02{
+  background: linear-gradient( to right, #c2f2d1, #f2f2f2 95%) !important;
+}
+.comment-positive03{
+  background: linear-gradient( to right, #a8ffc4, #f2f2f2 95%) !important;
+}
+.comment-positive04{
+  background: linear-gradient( to right, #8affaf, #f2f2f2 95%) !important;
+}
+.comment-positive05{
+  background: linear-gradient( to right, #68fc97, #f2f2f2 95%) !important;
+}
+.comment-neutral{
+
+}
+.comment-negative01{
+  background: linear-gradient( to right, #fff3ed, #f2f2f2 95%) !important;
+}
+.comment-negative02{
+  background: linear-gradient( to right, #ffe7db, #f2f2f2 95%) !important;
+}
+.comment-negative03{
+  background: linear-gradient( to right, #ffd6c2, #f2f2f2 95%) !important;
+}
+.comment-negative04{
+  background: linear-gradient( to right, #ffc5a8, #f2f2f2 95%) !important;
+}
+.comment-negative05{
+  background: linear-gradient( to right, #ffb38c, #f2f2f2 95%) !important;
+}

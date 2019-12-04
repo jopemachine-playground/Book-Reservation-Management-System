@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,UAAU;EAER,WAAM,EAAE,aAAa;EACrB,SAAI,EAAE,IAAI;EAEV,UAAU,EAAE,MAAM;EAClB,KAAK,EAAE,OAAO;EACd,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;EACX,gBAAgB,EAAE,kBAAkB;EAErC,aAAE;IACA,SAAS,EAAE,IAAI",
+"sources": ["../sass/BottomFixedNavbar.scss"],
+"names": [],
+"file": "BottomFixedNavbar.css"
+}

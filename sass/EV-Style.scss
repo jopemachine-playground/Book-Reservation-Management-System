@@ -1,0 +1,40 @@
+// @ File Name : EV-Style.scss
+// @ Author : jopemachine
+// @ Team : team ⓒ EV for BottomUp
+// @ Created : 2019-07-22, 16:45:43
+
+$backgroundColor : #f2f2f2;
+
+.comment-positive01{
+  background: linear-gradient( to right, #edfff3, $backgroundColor 95%) !important;
+}
+.comment-positive02{
+  background: linear-gradient( to right, #c2f2d1, $backgroundColor 95%) !important;
+}
+.comment-positive03{
+  background: linear-gradient( to right, #a8ffc4, $backgroundColor 95%) !important;
+}
+.comment-positive04{
+  background: linear-gradient( to right, #8affaf, $backgroundColor 95%) !important;
+}
+.comment-positive05{
+  background: linear-gradient( to right, #68fc97, $backgroundColor 95%) !important;
+}
+.comment-neutral{
+
+}
+.comment-negative01{
+  background: linear-gradient( to right, #fff3ed, $backgroundColor 95%) !important;
+}
+.comment-negative02{
+  background: linear-gradient( to right, #ffe7db, $backgroundColor 95%) !important;
+}
+.comment-negative03{
+  background: linear-gradient( to right, #ffd6c2, $backgroundColor 95%) !important;
+}
+.comment-negative04{
+  background: linear-gradient( to right, #ffc5a8, $backgroundColor 95%) !important;
+}
+.comment-negative05{
+  background: linear-gradient( to right, #ffb38c, $backgroundColor 95%) !important;
+}

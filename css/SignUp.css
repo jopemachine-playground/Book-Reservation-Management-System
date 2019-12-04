@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+a.navbar-brand {
+  font-family: 'Jeju Gothic';
+  float: left !important; }
+
+.side_btn {
+  border: none;
+  background-color: #333333; }
+
+.sizeUpOnHover:hover {
+  transform: scale(1.35); }
+
+#FixedNavbar {
+  border-bottom: #f8fc25 3px solid;
+  background-color: #333333 !important; }
+
+#Copyright {
+  font-family: 'Jeju Gothic';
+  font-size: 12px;
+  text-align: center;
+  color: #f2f2f2;
+  width: 100%;
+  bottom: 0px;
+  background-color: #333333 !important; }
+  #Copyright em {
+    font-size: 12pt; }
+
+#Background {
+  background: url("../img/space_edit.jpg") repeat-x fixed;
+  background-color: #e3e3e3 !important; }
+
+* {
+  box-sizing: border-box;
+  outline: none !important; }
+
+strong {
+  color: red !important; }
+
+label {
+  font-family: 'Jeju Gothic'; }
+
+.bg-dark * {
+  color: #ffffff; }
+
+#Title {
+  font-size: 60px;
+  color: #ebf4ff; }
+
+#IDDuplicateCheckButton {
+  margin-top: 5px;
+  float: right; }
+
+#ProfileImageDiv {
+  padding: 15px;
+  margin-bottom: 32px;
+  border-radius: 8px;
+  /* border: 0.9px solid black !important; */ }
+
+#WhiteSpaceForResponsivePage {
+  width: 100%;
+  height: 250px; }
+
+#userDefaultProfile {
+  border: 1px solid black; }
+
+@media screen and (max-width: 766px) {
+  .responsiveNone {
+    display: none; }
+
+  .responsiveNone2 {
+    display: default; }
+
+  .responsiveNone2 * {
+    display: default; } }
+@media screen and (min-width: 767px) {
+  .responsiveNone {
+    display: default; }
+
+  .responsiveNone2 {
+    display: none; }
+
+  .responsiveNone2 * {
+    display: none; } }
+
+/*# sourceMappingURL=SignUp.css.map */

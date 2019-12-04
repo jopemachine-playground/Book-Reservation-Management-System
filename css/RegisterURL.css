@@ -1,0 +1,162 @@
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+a.navbar-brand {
+  font-family: 'Jeju Gothic';
+  float: left !important; }
+
+.side_btn {
+  border: none;
+  background-color: #333333; }
+
+.sizeUpOnHover:hover {
+  transform: scale(1.35); }
+
+#FixedNavbar {
+  border-bottom: #f8fc25 3px solid;
+  background-color: #333333 !important; }
+
+#Copyright {
+  font-family: 'Jeju Gothic';
+  font-size: 12px;
+  text-align: center;
+  color: #f2f2f2;
+  width: 100%;
+  bottom: 0px;
+  background-color: #333333 !important; }
+  #Copyright em {
+    font-size: 12pt; }
+
+#Background {
+  background: url("../img/space_edit.jpg") repeat-x fixed;
+  background-color: #e3e3e3 !important; }
+
+* {
+  box-sizing: border-box;
+  outline: none !important; }
+
+footer {
+  color: #ffffff;
+  width: 100%; }
+
+textarea {
+  width: 100%; }
+  textarea:focus {
+    background-color: #ffffff;
+    color: black; }
+  textarea:not(focus) {
+    background-color: #dce3ef; }
+
+.service {
+  background-color: #ffffff !important; }
+  .service:hover {
+    background-color: #ebebeb !important;
+    transition: background-color .3s; }
+
+.roomDelete_btn {
+  border: none;
+  background-color: #e9ecef; }
+
+.dropdown-menu a:hover {
+  background-color: #666666 !important;
+  color: #ffffff !important; }
+
+.dropdown-menu-right {
+  right: 0;
+  left: auto; }
+
+.jumbotron {
+  margin-top: 15px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  .jumbotron h1 {
+    font-size: 28px;
+    font-family: 'Jeju Gothic'; }
+
+.MessageContent {
+  font-size: 16px;
+  font-family: 'Jeju Gothic'; }
+
+.Buttons {
+  font-size: 14px;
+  font-family: 'Jeju Gothic'; }
+
+.dropdown-toggle::after {
+  content: none; }
+
+.stikyFooter {
+  position: sticky;
+  display: block;
+  bottom: 0px;
+  left: 0px; }
+
+#Header {
+  color: #ffffff;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 10px; }
+
+#NoServiceWarning {
+  font-size: 12pt;
+  text-align: center;
+  font-family: 'Jeju Gothic'; }
+
+#Modal_USER_ID {
+  display: inline;
+  font-family: 'Jeju Gothic'; }
+
+#Modal_SIGNUP_DATE {
+  display: inline;
+  font-family: 'Jeju Gothic'; }
+
+#userDefaultProfile {
+  width: 100px;
+  height: 100px;
+  overflow: hidden; }
+
+#smallModal {
+  padding: 15px;
+  background-image: url("../img/userProfileBackImage.png"); }
+
+#FooterDiv {
+  margin-top: 70px; }
+
+#WhiteSpaceForResponsivePage {
+  width: 100%;
+  height: 70px; }
+
+@media screen and (max-width: 766px) {
+  .responsive {
+    display: none; }
+
+  .responsiveNone {
+    display: none; }
+
+  .responsiveNone2 {
+    display: default; }
+
+  .responsiveNone2 * {
+    display: default; } }
+@media screen and (min-width: 767px) {
+  .responsive {
+    display: default; }
+
+  .responsiveNone {
+    display: default; }
+
+  .responsiveNone2 {
+    display: none; }
+
+  .responsiveNone2 * {
+    display: none; } }
+@media screen and (max-width: 580px) {
+  .responsiveSmall {
+    display: none; }
+
+  .responsiveSmallReverse {
+    display: default; } }
+@media screen and (min-width: 581px) {
+  .responsiveSmallReverse {
+    display: none; } }
+
+/*# sourceMappingURL=RegisterURL.css.map */

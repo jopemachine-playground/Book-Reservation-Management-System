@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,WAAY;EACV,UAAU,EAAE,2CAAoC;EAChD,gBAAgB,EAAE,kBAA2B",
+"sources": ["../sass/BackGround.scss"],
+"names": [],
+"file": "BackGround.css"
+}

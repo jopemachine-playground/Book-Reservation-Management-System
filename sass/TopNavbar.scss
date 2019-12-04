@@ -1,0 +1,27 @@
+// @ File Name : TopNavbar.scss
+// @ Author : jopemachine
+// @ Team : team ⓒ EV for BottomUp
+// @ Created : 2019-07-22, 14:15:35
+
+// Style of Top Navbar
+$TopNavbarColor : #333333;
+$IconMagnificationScale : 1.35;
+
+a.navbar-brand{
+  font-family: 'Jeju Gothic';
+  float: left !important;
+}
+
+.side_btn{
+  border: none;
+  background-color: $TopNavbarColor;
+}
+
+.sizeUpOnHover:hover{
+  transform: scale($IconMagnificationScale);
+}
+
+#FixedNavbar{
+  border-bottom: #f8fc25 3px solid;
+  background-color: $TopNavbarColor !important;
+}

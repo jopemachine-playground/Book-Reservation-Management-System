@@ -1,0 +1,16 @@
+a.navbar-brand {
+  font-family: 'Jeju Gothic';
+  float: left !important; }
+
+.side_btn {
+  border: none;
+  background-color: #333333; }
+
+.sizeUpOnHover:hover {
+  transform: scale(1.35); }
+
+#FixedNavbar {
+  border-bottom: #f8fc25 3px solid;
+  background-color: #333333 !important; }
+
+/*# sourceMappingURL=TopNavbar.css.map */
