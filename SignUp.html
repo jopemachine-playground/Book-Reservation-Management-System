@@ -94,34 +94,12 @@
         <input id="PW_Confirm" type="password" name="PW_Confirm" class="form-control" maxlength="20" placeholder="비밀번호를 다시 한 번 입력하세요" title="비밀번호를 다시 한 번 입력하세요." required>
       </div>
 
-      <!-- 성별란은 선택 시 보이지 않는 input 태그 값이 변경되게하고, 이 값을 php에 전송함으로써 구현했음 -->
-      <label for="Gender">성별</label>
-      <input id="Gender" name="Gender" type="text" style="display: none;">
-
-      <br>
-
-      <div class="form-group btn-group btn-group-toggle" data-toggle="buttons">
-        <!-- btn-secondary는 색상에 대한 css 속성 (부트스트랩의) -->
-        <label class="btn btn-secondary">
-          <input type="radio" autocomplete="off" onchange="manButtonClick()">남자
-        </label>
-        <!-- btn-secondary는 색상에 대한 css 속성 -->
-        <label class="btn btn-secondary">
-          <input type="radio" autocomplete="off" onchange="womanButtonClick()">여자
-        </label>
-      </div>
-
       <br>
 
       <!-- 이름 란은 DB에 성과 이름이 합쳐져 기록됨 -->
       <label>이름</label>
-      <div class="form-group form-row">
-        <div class="col-sm-4">
-          <input id="LastName" type="text" name="LastName" class="form-control" placeholder="성">
-        </div>
-        <div class="col-sm-8">
-          <input id="FirstName" type="text" name="FirstName" class="form-control" placeholder="이름">
-        </div>
+      <div class="form-group">
+          <input id="Name" type="text" name="Name" class="form-control" placeholder="이름">
       </div>
 
       <div class="form-group">
@@ -130,13 +108,13 @@
       </div>
 
       <div class="form-group">
-        <label for="Address">주소</label>
-        <input id="Address" type="text" name="Address" class="form-control" placeholder="주소를 입력하세요">
+        <label for="Telephone">핸드폰 번호</label>
+        <input id="PhoneNumber" type="phone" name="Telephone" class="form-control" placeholder="핸드폰 번호를 입력하세요">
       </div>
 
       <div class="form-group">
-        <label for="PhoneNumber">핸드폰 번호</label>
-        <input id="PhoneNumber" type="phone" name="PhoneNumber" class="form-control" placeholder="핸드폰 번호를 입력하세요">
+        <label for="Position">직위</label>
+        <input id="PhoneNumber" type="text" name="Position" class="form-control" placeholder="교직원, 학부생, 대학원생">
       </div>
 
       <!-- btn-block을 붙이면 버튼이 container 너비에 가득차게 됨 -->

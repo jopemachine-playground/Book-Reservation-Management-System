@@ -35,4 +35,6 @@
     exit();
   }
 
+   $_SESSION['user_id'] = $ID;
+
   echo ("<script>location.href='../ManageService.php';</script>");

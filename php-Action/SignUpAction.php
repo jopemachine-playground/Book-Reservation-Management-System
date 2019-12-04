@@ -8,29 +8,10 @@ $connect_object = MySQLConnection::DB_Connect('db_hw');
 $ID           = $_POST["ID"];
 $PW           = $_POST["PW"];
 $PW_Confirm   = $_POST["PW_Confirm"];
-$Address      = $_POST["Name"];
-$PhoneNumber  = $_POST["Email"];
-$Gender       = $_POST["Telephone"];
-$Email        = $_POST["Positon"];
-
-$reg_ID       = preg_match('/^[a-zA-z]{1}[\w]{3,19}$/', $ID, $r1);
-$reg_Email    = preg_match('/^[\w]([-_.]?[\w])*@[\w]([-_.]?[\w])*.[a-zA-Z]{2,3}$/i', $Email, $r2);
-
-// 매칭되지 않는 값이 들어올 경우 UserEdit을 실행하지 않는다
-if(!empty($Email)){
-  if($reg_Email == 0){
-    echo ("<script language=javascript>alert('잘못된 형식의 이메일 입력입니다.')</script>");
-    echo ("<script>location.href='../SignUp.html';</script>");
-    exit();
-  }
-}
-
-// 매칭되지 않는 값이 들어올 경우 UserEdit을 실행하지 않는다
-if($reg_ID == 0){
-  echo ("<script language=javascript>alert('잘못된 형식의 ID 입력입니다.')</script>");
-  echo ("<script>location.href='../SignUp.html';</script>");
-  exit();
-}
+$Name         = $_POST["Name"];
+$Email        = $_POST["Email"];
+$Telephone    = $_POST["Telephone"];
+$Position     = $_POST["Position"];
 
 // DB에서 PK (ID) 중복 검사
 $searchUserID = "
@@ -50,13 +31,13 @@ while($row = mysqli_fetch_array($ret)){
 
 // DB에 새 레코드 입력
 $insertData = "
-  Insert INTO customer (
+  Insert INTO user (
     ID,
     PW,
     Name,
     Email,
     Telephone,
-    Position,
+    Position
     ) VALUES(
     '$ID',
     '$PW',

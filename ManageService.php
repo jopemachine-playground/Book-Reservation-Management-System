@@ -48,7 +48,7 @@
       <!-- 인라인으로 스타일을 준 것은, bootstrap.css에서 색상 속성이 !important로 선언되어 있기 때문임. boostrap 파일을 변경하기보단, 인라인으로 새 속성을 주었음 -->
       <nav id="FixedNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <img src="img/smile.svg" style="margin-right: 10px;">
-        <a class="navbar-brand" href="#"><?=$Title;?></a>
+        <a class="navbar-brand" href="#">도서 관리 예약 서비스</a>
 
         <!-- 창 너비에 따라 버튼이 미디어 쿼리로, 두 종류로 나뉜다. -->
         <!-- 아래의 버튼은 창이 작을 때, 핸드폰이나 태블릿 같은 환경에서 사용할 버튼 및 a 태그 들이다.-->
