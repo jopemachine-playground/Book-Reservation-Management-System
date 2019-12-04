@@ -1,12 +1,3 @@
-// @ File Name : UserEdit.js
-// @ Author : jopemachine
-// @ Team : team ⓒ EV for BottomUp
-// @ Created : 2019-07-14, 15:52:37
-// @ Desc :
-// @    evCommentService.ga의 유저 정보 변경에 사용됩니다.
-
-var profileImage;
-
 // 클라이언트 쪽에서 유효성 검사를 하고, 유효한 경우에만 넘어감
 function SubmitButtonClicked(){
 
@@ -36,7 +27,7 @@ function SubmitButtonClicked(){
 }
 
 function ToMainPage(){
-  location.href='URL-Register.php';
+  location.href='ManageService.php';
 }
 
 function changeProfileImage(value){

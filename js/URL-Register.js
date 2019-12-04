@@ -1,10 +1,3 @@
-// @ File Name : URL-Register.js
-// @ Author : jopemachine
-// @ Team : team ⓒ EV for BottomUp
-// @ Created : 2019-07-03, 18:29:58
-// @ Desc :
-// @     evCommentService.ga의 블로그 서비스 등록 및 관리에 사용됩니다.
-
 var DeletingURLID;
 
 function AddURLButtonClicked(){

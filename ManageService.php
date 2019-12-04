@@ -12,7 +12,6 @@
   }
 
   require_once('./php-Action/MySQLConection.php');
-  require_once('php-Action\UserModalBox.php');
 
   $connect_object = MySQLConnection::DB_Connect('userdb');
 
@@ -24,9 +23,7 @@
     <title><?=$Title;?></title>
     <!-- meta 데이터 정의 -->
     <meta charset="utf-8">
-    <meta name="description" content="Comment Manage Service">
-    <meta name="keywords" content="Sentimental Analysis Comment Service">
-    <meta name="author" content="Team EV">
+
     <!-- 반응형 웹페이지 구현을 위한 meta 데이터 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 

@@ -1,11 +1,3 @@
-// @ File Name : SignIn.js
-// @ Author : jopemachine
-// @ Team : team ⓒ EV for BottomUp
-// @ Created : 2019-07-03, 09:17:25
-// @ Desc :
-// @    evCommentService.ga의 로그인에 사용됩니다.
-
-
 function SubmitButtonClicked(){
   return true;
 }
