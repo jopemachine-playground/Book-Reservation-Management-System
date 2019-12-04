@@ -10,7 +10,7 @@ function ajaxRequest(type, url, dataArr, success, error){
 
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
-  selectButtons('Analysis-search');
+  selectButtons('Analysis-registerBook');
 }
 
 function Loading(){

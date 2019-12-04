@@ -35,6 +35,11 @@
     exit();
   }
 
-   $_SESSION['user_id'] = $ID;
+  $_SESSION['user_id'] = $ID;
+
+  if($row['ID'] == "manager"){
+    echo ("<script>location.href='../ManagerMainPage.php';</script>");
+    exit();
+  }
 
   echo ("<script>location.href='../ManageService.php';</script>");
