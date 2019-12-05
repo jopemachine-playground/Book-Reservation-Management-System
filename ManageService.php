@@ -92,6 +92,8 @@
         <div class="col-md-3" style="margin-bottom: 15px;">
           <div id="AnalysisButtons" class="list-group">
             <a id="Analysis-search" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">검색</a>
+            <a id="Analysis-reservedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 예약한 도서</a>
+            <a id="Analysis-borrowedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 대출한 도서</a>
             <a id="Analysis-leave" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">회원 탈퇴</a>
           </div>
         </div>

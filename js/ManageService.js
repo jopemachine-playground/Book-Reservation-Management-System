@@ -140,6 +140,12 @@ function selectButtons(clickedButton){
     case "Analysis-leave":
       selectedService = "LeaveAction.php";
       break;
+    case "Analysis-borrowedBook":
+      selectedService = "BorrowedBooks.php";
+      break;
+    case "Analysis-reservedBook":
+      selectedService = "ReservedBooks.php";
+      break;
   }
 
   ajaxRequest("POST", `../php-Action/CustomerService/${selectedService}`, { URLID : urlID },
