@@ -8,36 +8,43 @@ function ajaxRequest(type, url, dataArr, success, error){
 }
 
 // 책을 대출
-function borrow(){
+function borrow(borrowBtn){
+
+  let ISBNStr = borrowBtn.prev().children(".ISBN").html().split(": ")[1];
+
   $.ajax({
     type: "POST",
     url : "php-Action/CustomerService/BorrowAction.php",
 
     data: {
-
+      ISBN: ISBNStr
     },
 
     success : function(data, status, xhr) {
-      console.log("대출 성공" + data);
+      console.log("대출 성공");
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
     }
   });
+
 }
 
 // 책을 예약
-function reserve(){
+function reserve(reserveBtn){
+
+  let ISBNStr = reserveBtn.prev().prev().children(".ISBN").html().split(": ")[1];
+
   $.ajax({
     type: "POST",
     url : "php-Action/CustomerService/ReserveAction.php",
 
     data: {
-
+      ISBN: ISBNStr
     },
 
     success : function(data, status, xhr) {
-      console.log("예약 성공" + data);
+      console.log("예약 성공");
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
@@ -57,7 +64,7 @@ function search(){
     },
 
     success : function(data, status, xhr) {
-      console.log("검색 성공" + data);
+      console.log("검색 성공");
       $('#searchContent').html(data);
     },
     error: function(jqXHR, textStatus, errorThrown) {
