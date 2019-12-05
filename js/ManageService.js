@@ -7,8 +7,45 @@ function ajaxRequest(type, url, dataArr, success, error){
   $.ajax({ type: type, url : url, data: dataArr, success : success, error: error });
 }
 
-function search(){
+// 책을 대출
+function borrow(){
+  $.ajax({
+    type: "POST",
+    url : "php-Action/CustomerService/BorrowAction.php",
 
+    data: {
+
+    },
+
+    success : function(data, status, xhr) {
+      console.log("대출 성공" + data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
+// 책을 예약
+function reserve(){
+  $.ajax({
+    type: "POST",
+    url : "php-Action/CustomerService/ReserveAction.php",
+
+    data: {
+
+    },
+
+    success : function(data, status, xhr) {
+      console.log("예약 성공" + data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
+function search(){
   $.ajax({
     type: "GET",
     url : "php-Action/BookSearch.php",
@@ -70,12 +107,6 @@ function selectButtons(clickedButton){
   let selectedService;
   switch (clickedButton) {
 
-    case "Analysis-reserveBook":
-      selectedService = "ReserveAction.php";
-      break;
-    case "Analysis-borrow":
-      selectedService = "BorrowAction.php"
-      break;
     case "Analysis-search":
       selectedService = "SearchBooksAction.php";
       break;
