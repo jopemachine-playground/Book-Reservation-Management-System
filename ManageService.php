@@ -62,13 +62,7 @@
           <!-- ml은 margin-left. -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./URL-Register.php">뒤로 가기</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="./php-Action/SignOutAction.php">로그아웃</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="modal" data-target="#UserInfoModal">내 정보</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./UserEdit.php">정보 수정</a>
@@ -85,7 +79,6 @@
           <button type="button" class="btn-sm side_btn dropdown-toggle sizeUpOnHover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/menu.svg" alt="sidebar menu"></button>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="./php-Action/SignOutAction.php">로그아웃</a>
-            <a class="dropdown-item" data-toggle="modal" data-target="#UserInfoModal">내 정보</a>
             <a class="dropdown-item" href="./UserEdit.php">정보 수정</a>
           </div>
           <button type="button" class="side_btn sizeUpOnHover" data-toggle="modal" data-target="#UserInfoModal"><img src="img/user.svg" alt="user info button"></button>
@@ -98,8 +91,6 @@
       <div class="row">
         <div class="col-md-3" style="margin-bottom: 15px;">
           <div id="AnalysisButtons" class="list-group">
-            <a id="Analysis-reserveBook" href="#" class="list-group-item sideButton active" onclick="selectButtons(this.id)">도서 예약</a>
-            <a id="Analysis-borrow" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">대출</a>
             <a id="Analysis-search" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">검색</a>
             <a id="Analysis-leave" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">회원 탈퇴</a>
           </div>

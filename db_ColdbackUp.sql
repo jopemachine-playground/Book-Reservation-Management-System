@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 19-12-04 15:12
+-- 생성 시간: 19-12-05 07:24
 -- 서버 버전: 10.3.16-MariaDB
 -- PHP 버전: 7.1.30
 
@@ -30,11 +30,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `book` (
   `ISBN` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
-  `Book` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
+  `Name` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
   `PublishedHouse` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
   `Author` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
-  `ReturnRequest` tinyint(3) NOT NULL
+  `ReturnRequest` tinyint(3) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- 테이블의 덤프 데이터 `book`
+--
+
+INSERT INTO `book` (`ISBN`, `Name`, `PublishedHouse`, `Author`, `ReturnRequest`) VALUES
+('12213154', 'bdfbf', 'wdqw', 'fwef', 0),
+('12312312', 'feswffef', 'fefwefewf', 'wefwefe', 0),
+('1558586383', 'efwef', 'fwefew', 'fwef', 0);
 
 -- --------------------------------------------------------
 
@@ -73,11 +82,19 @@ CREATE TABLE `reservation` (
 CREATE TABLE `user` (
   `ID` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
   `PW` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
-  `Name` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
-  `Email` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
-  `Telophone` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
-  `Position` varchar(10) CHARACTER SET utf8mb4 NOT NULL
+  `Name` varchar(40) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `Email` varchar(40) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `Telephone` varchar(40) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `Position` varchar(10) CHARACTER SET utf8mb4 NOT NULL DEFAULT '학부생'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- 테이블의 덤프 데이터 `user`
+--
+
+INSERT INTO `user` (`ID`, `PW`, `Name`, `Email`, `Telephone`, `Position`) VALUES
+('manager', '1234', '매니저', NULL, NULL, '관리자'),
+('startup', '1234', 'ì´ê·œë´‰', 'jopemachine@naver.com', '010-5547-2540', 'êµì§ì›');
 
 --
 -- 덤프된 테이블의 인덱스

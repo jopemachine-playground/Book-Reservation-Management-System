@@ -49,6 +49,8 @@ while($oneBook = mysqli_fetch_array($searchRes)){
         <div>저자: %s</div>
         <div>대출 가능 여부: %s</div>
       </div>
+      <button type="submit" class="btn btn-white btn-block" style="" onclick="borrow()">대출</button>
+      <button type="submit" class="btn btn-white btn-block" style="margin-bottom: 35px;" onclick="reserve()">예약</button>
     </div>
   ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $oneBook[4]);
 }

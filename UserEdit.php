@@ -1,52 +1,40 @@
 <?php
-session_start();
-$UserID = $_SESSION['user_id'];
-// 세션에 ID가 없다면, 이용할 수 없으니, SignIn 페이지로 이동
-if(!isset($UserID)){
-  echo ("<script language=javascript>alert('먼저 로그인하세요!')</script>");
-  echo ("<script>location.href='SignIn.php';</script>");
-  exit();
-}
-require_once('./php-Action/MySQLConection.php');
-// DB에서 기본 값을 빼내와, 디폴트 값으로 입력 폼에 넣어놓는다.
-$connect_object = MySQLConnection::DB_Connect('userdb');
-// DB에서 PK (ID) 를 찾음
-$searchUserID = "
-  SELECT * FROM usersinfotbl WHERE ID = '$UserID'
-";
-$ret = mysqli_query($connect_object, $searchUserID);
-$row = mysqli_fetch_array($ret);
-$ID = $row['ID'];
-$PW = $row['PW'];
-$Address = $row['Address'];
-$PhoneNumber = $row['PhoneNumber'];
-$Gender = $row['Gender'];
-$Name = $row['Name'];
-$Email = $row['Email'];
-if(!empty($row['ProfileImageFileName'])){
-  $ProfileImageFileNamePath = "profileImages/". $row['ProfileImageFileName'];
-}
-else{
-  $ProfileImageFileNamePath = "img/userDefaultProfile.svg";
-}
-if(isset($Name)){
-  $NameArr = explode(' ', $row['Name']);
-  $FirstName = $NameArr[0];
-  $LastName = $NameArr[1];
-}
-else {
-  $FirstName = '';
-  $LastName = '';
-}
-?>
+  session_start();
+  $UserID = $_SESSION['user_id'];
+  // 세션에 ID가 없다면, 이용할 수 없으니, SignIn 페이지로 이동
+  if(!isset($UserID)){
+    echo ("<script language=javascript>alert('먼저 로그인하세요!')</script>");
+    echo ("<script>location.href='SignIn.php';</script>");
+    exit();
+  }
+
+  require_once('./php-Action/MySQLConection.php');
+
+  // DB에서 기본 값을 빼내와, 디폴트 값으로 입력 폼에 넣어놓는다.
+  $connect_object = MySQLConnection::DB_Connect('db_hw');
+  // DB에서 PK (ID) 를 찾음
+  $searchUserID = "
+    SELECT * FROM user WHERE ID = '$UserID'
+  ";
+
+  $ret = mysqli_query($connect_object, $searchUserID);
+  $row = mysqli_fetch_array($ret);
+
+  $ID = $row['ID'];
+  $PW = $row['PW'];
+  $Name = $row['Name'];
+  $Telephone = $row['Telephone'];
+  $Position = $row['Position'];
+  $Email = $row['Email'];
+
+  ?>
+
 <!DOCTYPE html>
 <html lang="kr">
 <head>
   <!-- 검색되게 쉽게 하기 위한 meta 태그 작성 -->
   <meta charset="utf-8">
-  <meta name="description" content="UserInfo Edit Page">
-  <meta name="keywords" content="Sentimental Analysis Comment Service">
-  <meta name="author" content="Team EV">
+
   <!-- 반응형 웹페이지 구현을 위한 meta 데이터 -->
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 
@@ -99,7 +87,7 @@ else {
   <section class="container" style="padding-top: 85px;">
 
     <!-- lead는 강조 표시 및 글자 크기를 키우는 역할을 함 -->
-    <p class="lead" style="font-size: 60px;">Sign Up</p>
+    <p class="lead" style="font-size: 60px;">User Info Edit</p>
 
     <!-- alert는 알림창이란 뜻. -->
     <!-- close 클래스를 지닌 버튼을 클릭하면 alert창이 fade out 된다. -->
@@ -113,13 +101,13 @@ else {
 
     <!-- 파일을 함께 전송하므로, enctype은 multipart/form-data 여야 한다 -->
     <!-- SubmitButtonClicked()가 true를 반환하는 경우에만 서버로 데이터를 전송한다 -->
-    <form action="php-Action/SignUpAction.php" enctype="multipart/form-data" onsubmit="return SubmitButtonClicked()" method="post">
+    <form action="php-Action/UserEditAction.php" enctype="multipart/form-data" method="post">
 
       <!-- form 태그를 통해 SignInAction.php를 거쳐 로그인 함 -->
       <!-- form-group 및 form-control 은 부트스트랩 css를 적용하기 위한 태그 -->
       <div class="form-group">
         <label for="ID">ID <strong>* </strong></label>
-        <input id="ID" type="text" name="ID" class="form-control" maxlength="20" placeholder="4글자 이상, 20자 이내로 입력해주세요." title="ID를 입력하세요." autofocus required>
+        <input id="ID" value="<?=$ID;?>" type="text" name="ID" class="form-control" maxlength="20" placeholder="4글자 이상, 20자 이내로 입력해주세요." title="ID를 입력하세요." autofocus required disabled>
         <label for="IDCheck" style="display:inline;"></label>
 
         <!-- outline이 들어가면 border 쪽에만 색이 들어감. sm은 small. 크기를 작게 만듬-->
@@ -142,26 +130,26 @@ else {
       <!-- 이름 란은 DB에 성과 이름이 합쳐져 기록됨 -->
       <label>이름</label>
       <div class="form-group">
-          <input id="Name" type="text" name="Name" class="form-control" placeholder="이름">
+          <input id="Name" value="<?=$Name;?>" type="text" name="Name" class="form-control" placeholder="이름">
       </div>
 
       <div class="form-group">
         <label for="Email">이메일 주소</label>
-        <input id="Email" type="email" name="Email" class="form-control" placeholder="이메일을 입력하세요">
+        <input id="Email" value="<?=$Email;?>" type="email" name="Email" class="form-control" placeholder="이메일을 입력하세요">
       </div>
 
       <div class="form-group">
         <label for="Telephone">핸드폰 번호</label>
-        <input id="PhoneNumber" type="phone" name="Telephone" class="form-control" placeholder="핸드폰 번호를 입력하세요">
+        <input id="PhoneNumber" value="<?=$Telephone;?>" type="phone" name="Telephone" class="form-control" placeholder="핸드폰 번호를 입력하세요">
       </div>
 
       <div class="form-group">
         <label for="Position">직위</label>
-        <input id="PhoneNumber" type="text" name="Position" class="form-control" placeholder="교직원, 학부생, 대학원생">
+        <input id="PhoneNumber" value="<?=$Position;?>" type="text" name="Position" class="form-control" placeholder="교직원, 학부생, 대학원생">
       </div>
 
       <!-- btn-block을 붙이면 버튼이 container 너비에 가득차게 됨 -->
-      <button type="submit" class="btn btn-dark btn-block btn-lg" style="margin-top: 120px;">가입</button>
+      <button type="submit" class="btn btn-dark btn-block btn-lg" style="margin-top: 120px;">정보 수정</button>
     </form>
   </section>
 

@@ -11,7 +11,7 @@
 
   echo sprintf('
     <div class="list-group">
-      <a class="list-group-item active" style="background-color: #474747!important; color: #ffffff; border: none !important;">책 검색</a>
+      <a class="list-group-item active" style="background-color: #474747!important; color: #ffffff; border: none !important;">책 검색 및 대출, 예약</a>
       <div class="list-group-item">
         <input id="searchWithBookName" type="radio" name="fruit" checked="checked" value="searchWithBookName" /> 책 제목
         <input id="searchWithISBN" type="radio" name="fruit" value="searchWithISBN" /> ISBN
@@ -19,7 +19,7 @@
           <div class="form-group">
             <input id="searchBar" type="text" name="Position" class="form-control" placeholder="책의 제목이나 ISBN을 입력">
           </div>
-          <button type="button" onclick="search()">검색</button>
+          <button type="submit" class="btn btn-dark btn-block" style="margin-top: 35px; margin-bottom: 35px;" onclick="search()">검색</button>
           <div id="searchContent">
       </div>
     </div>
