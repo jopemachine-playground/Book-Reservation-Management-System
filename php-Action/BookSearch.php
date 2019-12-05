@@ -21,12 +21,24 @@ $SearchWithBookName       = $_GET["searchWithBookName"];
 
 if($SearchWithISBN === "true"){
   $searchBook = "
-    SELECT * FROM book WHERE ISBN LIKE \"%". $Content . "%\"
+    SELECT *
+    FROM book
+    LEFT OUTER JOIN borrow
+    ON book.ISBN = borrow.ISBN
+    LEFT OUTER JOIN reservation
+    ON book.ISBN = reservation.ISBN
+    WHERE book.ISBN LIKE \"%". $Content . "%\"
   ";
 }
 else {
   $searchBook = "
-    SELECT * FROM book WHERE Name LIKE \"%". $Content . "%\"
+    SELECT *
+    FROM book
+    LEFT OUTER JOIN borrow
+    ON book.ISBN = borrow.ISBN
+    LEFT OUTER JOIN reservation
+    ON book.ISBN = reservation.ISBN
+    WHERE book.Name LIKE \"%". $Content . "%\"
   ";
 }
 
@@ -39,7 +51,30 @@ if(mysqli_num_rows($searchRes) === 0){
   exit();
 }
 
+// 0 : ISBN
+// 1 : Name
+// 2 : PublishHouse
+// 3 : Author
+// 4 : ReturnReq
+// 5 : 대출한 사람의 ID (대출 중인 경우)
+// 12: 예약 중인 경우 예약자의 ID
+
 while($oneBook = mysqli_fetch_array($searchRes)){
+
+  if(empty($oneBook[4])) {
+    $canBorrow = "대출 가능";
+  }
+  else {
+    $canBorrow = "대출 중";
+  }
+
+  if(isset($oneBook[12])){
+    $isBooking = "예약 중";
+  }
+  else{
+    $isBooking = "예약 가능";
+  }
+
   $resComponent .= sprintf('
     <div class="list-group">
       <div class="list-group-item">
@@ -48,11 +83,12 @@ while($oneBook = mysqli_fetch_array($searchRes)){
         <div>출판사: %s</div>
         <div>저자: %s</div>
         <div>대출 가능 여부: %s</div>
+        <div>현재 예약 여부: %s</div>
       </div>
       <button type="submit" class="btn btn-white btn-block" style="" onclick="borrow()">대출</button>
       <button type="submit" class="btn btn-white btn-block" style="margin-bottom: 35px;" onclick="reserve()">예약</button>
     </div>
-  ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $oneBook[4]);
+  ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $canBorrow, $isBooking);
 }
 
 echo $resComponent;
