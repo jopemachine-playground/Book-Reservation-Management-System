@@ -13,11 +13,14 @@
     <div class="list-group">
       <a class="list-group-item active" style="background-color: #474747!important; color: #ffffff; border: none !important;">책 검색</a>
       <div class="list-group-item">
-        <p class="lead">검색할 책 제목을 입력하세요.</p>
+        <input id="searchWithBookName" type="radio" name="fruit" checked="checked" value="searchWithBookName" /> 책 제목
+        <input id="searchWithISBN" type="radio" name="fruit" value="searchWithISBN" /> ISBN
+          <p class="lead">검색할 책의 제목이나 ISBN을 입력하세요.</p>
           <div class="form-group">
-            <input id="PhoneNumber" type="text" name="Position" class="form-control" placeholder="책 제목">
-            <button type="button">검색</button>
+            <input id="searchBar" type="text" name="Position" class="form-control" placeholder="책의 제목이나 ISBN을 입력">
           </div>
+          <button type="button" onclick="search()">검색</button>
+          <div id="searchContent">
       </div>
     </div>
   ');

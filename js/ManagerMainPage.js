@@ -8,6 +8,27 @@ function ajaxRequest(type, url, dataArr, success, error){
   $.ajax({ type: type, url : url, data: dataArr, success : success, error: error });
 }
 
+function search(){
+  $.ajax({
+    type: "GET",
+    url : "php-Action/BookSearch.php",
+
+    data: {
+      content : $('#searchBar').val(),
+      searchWithISBN: $('#searchWithISBN').is(':checked'),
+      searchWithBookName: $('#searchWithBookName').is(':checked'),
+    },
+
+    success : function(data, status, xhr) {
+      console.log("검색 성공" + data);
+      $('#searchContent').html(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
   selectButtons('Analysis-registerBook');

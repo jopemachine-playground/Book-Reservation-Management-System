@@ -20,7 +20,7 @@
 <!DOCTYPE html>
 <html lang="kr">
   <head>
-    <title><?=$Title;?></title>
+    <title>도서 관리 예약 서비스</title>
     <!-- meta 데이터 정의 -->
     <meta charset="utf-8">
 

@@ -20,7 +20,7 @@
 <!DOCTYPE html>
 <html lang="kr">
   <head>
-    <title><?=$Title;?></title>
+    <title>관리자 페이지</title>
     <!-- meta 데이터 정의 -->
     <meta charset="utf-8">
 

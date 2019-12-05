@@ -30,42 +30,6 @@ function ToMainPage(){
   location.href='ManageService.php';
 }
 
-function changeProfileImage(value){
-
-  $('#userDefaultProfile').hide();
-  $('#userProfileImage').show();
-
-  var canvas = document.getElementById('userProfileImage');
-  var canvasContext = canvas.getContext("2d");
-
-  canvas.width = 80;
-  canvas.height = 80;
-
-  if(value.files && value.files[0]){
-    var reader = new FileReader();
-    reader.readAsDataURL(value.files[0]);
-    // readAsDataURL 메서드는 컨텐츠를 특정 Blob 이나 File에서 읽어 오는 역할
-
-    reader.onload = function(e){
-
-      profileImage = new Image();
-      profileImage.src = reader.result;
-
-      profileImage.onload = function(){
-        canvasContext.drawImage(this, 0, 0, 80, 80);
-      }
-    }
-  }
-}
-
-function manButtonClick(){
-  $('#Gender').val('man');
-}
-
-function womanButtonClick(){
-  $('#Gender').val('woman');
-}
-
 // PhoneNumber 란에 숫자만 입력되도록 강제하는 함수. 아래 페이지의 코드를 그대로 사용한 것이다.
 // http://blog.tjsrms.me/jquery-%ED%95%B8%EB%93%9C%ED%8F%B0-%EB%B2%88%ED%98%B8-%EC%B2%B4%ED%81%AC%ED%95%98%EA%B8%B0/
 $(function(){
