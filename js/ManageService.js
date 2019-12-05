@@ -11,22 +11,30 @@ function ajaxRequest(type, url, dataArr, success, error){
 function borrow(borrowBtn){
 
   let ISBNStr = borrowBtn.prev().children(".ISBN").html().split(": ")[1];
+  let canBorrow = borrowBtn.prev().children(".canBorrow").html().split(": ")[1];
 
-  $.ajax({
-    type: "POST",
-    url : "php-Action/CustomerService/BorrowAction.php",
+  if(canBorrow === "대출 가능"){
+    $.ajax({
+      type: "POST",
+      url : "php-Action/CustomerService/BorrowAction.php",
 
-    data: {
-      ISBN: ISBNStr
-    },
+      data: {
+        ISBN: ISBNStr
+      },
 
-    success : function(data, status, xhr) {
-      console.log("대출 성공");
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
-    }
-  });
+      success : function(data, status, xhr) {
+        console.log("대출 성공");
+        alert("대출 성공했습니다.");
+        location.reload();
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+      }
+    });
+  }
+  else {
+    alert("이미 대출중인 도서입니다!");
+  }
 
 }
 
@@ -34,22 +42,34 @@ function borrow(borrowBtn){
 function reserve(reserveBtn){
 
   let ISBNStr = reserveBtn.prev().prev().children(".ISBN").html().split(": ")[1];
+  let canReserve = reserveBtn.prev().prev().children(".canReserve").html().split(": ")[1];
 
-  $.ajax({
-    type: "POST",
-    url : "php-Action/CustomerService/ReserveAction.php",
+  console.log(canReserve);
+  console.log(canReserve === "예약 가능");
 
-    data: {
-      ISBN: ISBNStr
-    },
+  if(canReserve === "예약 가능"){
+    $.ajax({
+      type: "POST",
+      url : "php-Action/CustomerService/ReserveAction.php",
 
-    success : function(data, status, xhr) {
-      console.log("예약 성공");
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
-    }
-  });
+      data: {
+        ISBN: ISBNStr
+      },
+
+      success : function(data, status, xhr) {
+        console.log("예약 성공");
+        alert("예약 성공했습니다.");
+        location.reload();
+      },
+
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+      }
+    });
+  }
+  else{
+    alert("이미 예약중인 도서입니다!");
+  }
 }
 
 function search(){

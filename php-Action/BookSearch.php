@@ -82,8 +82,8 @@ while($oneBook = mysqli_fetch_array($searchRes)){
         <div class="ISBN">ISBN: %s</div>
         <div>출판사: %s</div>
         <div>저자: %s</div>
-        <div>대출 가능 여부: %s</div>
-        <div>현재 예약 여부: %s</div>
+        <div class="canBorrow">대출 가능 여부: %s</div>
+        <div class="canReserve">현재 예약 여부: %s</div>
       </div>
       <button type="submit" class="btn btn-white btn-block" style="" onclick="borrow($(this))">대출</button>
       <button type="submit" class="btn btn-white btn-block" style="margin-bottom: 35px;" onclick="reserve($(this))">예약</button>
