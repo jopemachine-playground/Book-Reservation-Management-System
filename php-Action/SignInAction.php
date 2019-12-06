@@ -3,7 +3,7 @@
   session_start();
 
   if(isset($_SESSION['user_id'])){
-    echo "<script>location.href='../ManageService.php';</script>";
+    echo "<script>location.href='../CustomerMainPage.php';</script>";
   }
 
   require_once('MySQLConection.php');
@@ -42,4 +42,4 @@
     exit();
   }
 
-  echo ("<script>location.href='../ManageService.php';</script>");
+  echo ("<script>location.href='../CustomerMainPage.php';</script>");

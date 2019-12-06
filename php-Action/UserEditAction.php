@@ -36,5 +36,5 @@
     echo ("<script>location.href='../ManagerMainPage.php';</script>");
   }
   else {
-    echo ("<script>location.href='../ManageService.php';</script>");
+    echo ("<script>location.href='../CustomerMainPage.php';</script>");
   }

@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/CommentManageService.css">
+    <link rel="stylesheet" href="./css/CustomerMainPage.css">
     <!-- Favicon 적용 -->
     <link rel="shortcut icon" size="16x16" href="./img/favicon.ico" />
     <!-- loader에 대한 css 시트. https://loading.io/css/ 를 사용했다.-->
@@ -91,10 +91,10 @@
       <div class="row">
         <div class="col-md-3" style="margin-bottom: 15px;">
           <div id="AnalysisButtons" class="list-group">
-            <a id="Analysis-registerBook" href="#" class="list-group-item sideButton active" onclick="selectButtons(this.id)">도서 등록</a>
-            <a id="Analysis-searchBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 검색</a>
-            <a id="Analysis-edit" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 정보 수정</a>
-            <a id="Analysis-acceptReturnBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 반납 승인</a>
+            <a id="Manager-registerBook" href="#" class="list-group-item sideButton active" onclick="selectButtons(this.id)">도서 등록</a>
+            <a id="Manager-searchBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 검색</a>
+            <a id="Manager-edit" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 정보 수정</a>
+            <a id="Manager-acceptReturnBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 반납 승인</a>
           </div>
         </div>
 

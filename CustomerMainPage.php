@@ -91,10 +91,10 @@
       <div class="row">
         <div class="col-md-3" style="margin-bottom: 15px;">
           <div id="AnalysisButtons" class="list-group">
-            <a id="Analysis-search" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">검색</a>
-            <a id="Analysis-reservedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 예약한 도서</a>
-            <a id="Analysis-borrowedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 대출한 도서</a>
-            <a id="Analysis-leave" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">회원 탈퇴</a>
+            <a id="CustomerService-search" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">검색</a>
+            <a id="CustomerService-reservedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 예약한 도서</a>
+            <a id="CustomerService-borrowedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 대출한 도서</a>
+            <a id="CustomerService-leave" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">회원 탈퇴</a>
           </div>
         </div>
 
@@ -119,7 +119,7 @@
     <!-- MDB 라이브러리 추가하기 -->
     <script src="./lib/mdb.min.js"></script>
     <!-- 커스텀 자바스크립트 추가하기 -->
-    <script src="./js/ManageService.js"></script>
+    <script src="./js/CustomerMainPage.js"></script>
     <!-- Chart JS 추가 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 

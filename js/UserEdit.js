@@ -27,7 +27,7 @@ function SubmitButtonClicked(){
 }
 
 function ToMainPage(){
-  location.href='ManageService.php';
+  location.href='CustomerMainPage.php';
 }
 
 // PhoneNumber 란에 숫자만 입력되도록 강제하는 함수. 아래 페이지의 코드를 그대로 사용한 것이다.

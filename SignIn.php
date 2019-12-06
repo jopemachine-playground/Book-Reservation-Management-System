@@ -3,12 +3,12 @@
   session_start();
 
   if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != "manager"){
-    echo "<script>location.href='../ManageService.php';</script>";
+    echo "<script>location.href='../CustomerMainPage.php';</script>";
   }
   else if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == "manager"){
     echo "<script>location.href='../ManagerMainPage.php';</script>";
   }
-  
+
 ?>
 
 <!DOCTYPE html>

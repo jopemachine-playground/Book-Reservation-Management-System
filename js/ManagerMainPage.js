@@ -70,16 +70,16 @@ function selectButtons(clickedButton){
   let selectedService;
   switch (clickedButton) {
 
-    case "Analysis-registerBook":
+    case "Manager-registerBook":
       selectedService = "RegisterBook.php";
       break;
-    case "Analysis-searchBook":
+    case "Manager-searchBook":
       selectedService = "SearchBooksAction.php"
       break;
-    case "Analysis-edit":
+    case "Manager-edit":
       selectedService = "EditBookInfo.php";
       break;
-    case "Analysis-acceptReturnBook":
+    case "Manager-acceptReturnBook":
       selectedService = "AcceptBookReturnAction.php";
       break;
   }
