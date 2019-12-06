@@ -61,17 +61,20 @@ if(mysqli_num_rows($searchRes) === 0){
 
 while($oneBook = mysqli_fetch_array($searchRes)){
 
-  if(empty($oneBook[4])) {
-    $canBorrow = "대출 가능";
+  $BorrowingUserID = $oneBook[5];
+  $isBooking = $oneBook[12];
+
+  if(empty($BorrowingUserID)) {
+    $BorrowingUserID = "대출 가능";
   }
   else {
-    $canBorrow = "대출 중";
+    $BorrowingUserID = "대출 중";
   }
 
-  if(isset($oneBook[12])){
+  if(isset($isBooking)) {
     $isBooking = "예약 중";
   }
-  else{
+  else {
     $isBooking = "예약 가능";
   }
 
@@ -88,7 +91,7 @@ while($oneBook = mysqli_fetch_array($searchRes)){
       <button type="submit" class="btn btn-white btn-block" style="" onclick="borrow($(this))">대출</button>
       <button type="submit" class="btn btn-white btn-block" style="margin-bottom: 35px;" onclick="reserve($(this))">예약</button>
     </div>
-  ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $canBorrow, $isBooking);
+  ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $BorrowingUserID, $isBooking);
 }
 
 echo $resComponent;
