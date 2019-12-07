@@ -105,6 +105,12 @@ function selectButtons(clickedButton){
     case "Manager-deleteBook":
       selectedService = "DeleteRegisteredBookView.php";
       break;
+    case "Manager-customerInfo":
+      selectedService = "CustomerInfoEditView.php";
+      break;
+    case "Manager-customerWithdrawal":
+      selectedService = "CustomerWithdrawalView.php";
+      break;
   }
 
   ajaxRequest("POST", `${selectedService}`, { URLID : urlID },
