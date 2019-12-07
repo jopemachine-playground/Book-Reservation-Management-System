@@ -71,16 +71,16 @@ function selectButtons(clickedButton){
   switch (clickedButton) {
 
     case "Manager-registerBook":
-      selectedService = "RegisterBook.php";
+      selectedService = "RegisterBookView.php";
       break;
     case "Manager-searchBook":
-      selectedService = "SearchBooksAction.php"
+      selectedService = "SearchBooksActionView.php"
       break;
     case "Manager-edit":
-      selectedService = "EditBookInfo.php";
+      selectedService = "EditBookInfoView.php";
       break;
     case "Manager-acceptReturnBook":
-      selectedService = "AcceptBookReturnAction.php";
+      selectedService = "AcceptBookReturnView.php";
       break;
   }
 
