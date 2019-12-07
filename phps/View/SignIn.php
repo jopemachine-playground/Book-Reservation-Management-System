@@ -66,7 +66,7 @@
     </section>
 
     <!-- Sign Up 표시 -->
-    <a id="AnchorForSignUp" href="SignUp.html">Sign Up</a>
+    <a id="AnchorForSignUp" href="../../SignUp.html">Sign Up</a>
 
     <!-- 스크롤바 에러를 피하기 위해 공간을 둠. 더 적당한 방법을 찾아 고치고 싶음-->
     <div id="WhiteSpaceForResponsivePage"></div>
@@ -76,15 +76,15 @@
   <footer id="Copyright" class="bg-dark p-3 text-center fixed-bottom"> &copy; 2019 DB Term Project&nbsp;</footer>
 
   <!-- 제이쿼리 자바스크립트 추가하기 -->
-  <script src="./lib/jquery-3.2.1.min.js"></script>
+  <script src="../../lib/jquery-3.2.1.min.js"></script>
   <!-- Popper 자바스크립트 추가하기 -->
-  <script src="./lib/popper.min.js"></script>
+  <script src="../../lib/popper.min.js"></script>
   <!-- 부트스트랩 자바스크립트 추가하기 -->
-  <script src="./lib/bootstrap.min.js"></script>
+  <script src="../../lib/bootstrap.min.js"></script>
   <!-- MDB 라이브러리 추가하기 -->
-  <script src="./lib/mdb.min.js"></script>
+  <script src="../../lib/mdb.min.js"></script>
   <!-- 커스텀 자바스크립트 추가하기 -->
-  <script src="./js/SignIn.js"></script>
+  <script src="../../js/SignIn.js"></script>
 
 </body>
 </html>

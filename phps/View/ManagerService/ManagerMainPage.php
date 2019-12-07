@@ -64,9 +64,6 @@
             <li class="nav-item">
               <a class="nav-link" href="../../Action/SignOutAction.php">로그아웃</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../UserEdit.php">정보 수정</a>
-            </li>
           </ul>
         </div>
 
@@ -78,7 +75,6 @@
           <button type="button" class="btn-sm side_btn dropdown-toggle sizeUpOnHover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/menu.svg" alt="sidebar menu"></button>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="../../Action/SignOutAction.php">로그아웃</a>
-            <a class="dropdown-item" href="../UserEdit.php">정보 수정</a>
           </div>
         </div>
 

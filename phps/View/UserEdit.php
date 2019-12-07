@@ -54,7 +54,7 @@
   <nav id="FixedNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
 
       <!-- navbar-brand는 brand를 나타내는 일종의 강조 표시 -->
-      <a class="navbar-brand" href="./UserEdit.html"><img src="../../img/smile.svg" style="margin-right: 10px;">회원 정보 수정</a>
+      <a class="navbar-brand" href="#"><img src="../../img/smile.svg" style="margin-right: 10px;">회원 정보 수정</a>
 
       <!-- 창 너비에 따라 버튼이 미디어 쿼리로, 두 종류로 나뉜다. -->
       <!-- 아래의 버튼은 창이 작을 때, 핸드폰이나 태블릿 같은 환경에서 사용할 버튼 및 a 태그 들이다.-->
@@ -79,7 +79,7 @@
 
       <!-- 아래의 버튼은 데스크톱에서 사용할 버튼 -->
       <div class="btn-group float-right responsiveNone">
-        <button type="button" class="side_btn sizeUpOnHover"><img src="img/arrow-left.svg" alt="return login page" onclick="ToMainPage();"></img></button>
+        <button type="button" class="side_btn sizeUpOnHover"><img src="../../img/arrow-left.svg" alt="return login page" onclick="ToMainPage()"></img></button>
       </div>
   </nav>
 
@@ -159,14 +159,14 @@
   <footer id="Copyright" class="bg-dark p-3 text-center"> &copy; 2019 DB Term Project&nbsp;</footer>
 
   <!-- 제이쿼리 자바스크립트 추가하기 -->
-  <script src="./lib/jquery-3.2.1.min.js"></script>
+  <script src="../../lib/jquery-3.2.1.min.js"></script>
   <!-- Popper 자바스크립트 추가하기 -->
-  <script src="./lib/popper.min.js"></script>
+  <script src="../../lib/popper.min.js"></script>
   <!-- 부트스트랩 자바스크립트 추가하기 -->
-  <script src="./lib/bootstrap.min.js"></script>
+  <script src="../../lib/bootstrap.min.js"></script>
   <!-- MDB 라이브러리 추가하기 -->
-  <script src="./lib/mdb.min.js"></script>
+  <script src="../../lib/mdb.min.js"></script>
   <!-- 커스텀 자바스크립트 추가하기 -->
-  <script src="./js/UserEdit.js"></script>
+  <script src="../../js/UserEdit.js"></script>
 </body>
 </html>
