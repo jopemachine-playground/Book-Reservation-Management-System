@@ -11,9 +11,10 @@ function ajaxRequest(type, url, dataArr, success, error){
 function borrow(borrowBtn){
 
   let ISBNStr = borrowBtn.prev().children(".ISBN").html().split(": ")[1];
-  let canBorrow = borrowBtn.prev().children(".canBorrow").html().split(": ")[1];
+  let canBorrow = (borrowBtn.prev().children(".canBorrow").html().split(": ")[1] === "대출 가능");
+  let isReserved = (borrowBtn.prev().children(".canReserve").html().split(": ")[1] !== "예약 가능");
 
-  if(canBorrow === "대출 가능"){
+  if(canBorrow && !isReserved){
     $.ajax({
       type: "POST",
       url : "../../Action/CustomerService/BorrowAction.php",
@@ -32,8 +33,11 @@ function borrow(borrowBtn){
       }
     });
   }
-  else {
+  else if(!canBorrow){
     alert("이미 대출중인 도서입니다!");
+  }
+  else {
+    alert("예약 도서입니다!");
   }
 
 }
