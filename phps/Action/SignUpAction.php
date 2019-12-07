@@ -24,7 +24,7 @@ $ret = mysqli_query($connect_object, $searchUserID);
 while($row = mysqli_fetch_array($ret)){
   if($ID == $row['ID']){
     echo ("<script language=javascript>alert('중복된 ID가 있습니다.')</script>");
-    echo ("<script>location.href='../SignUp.html';</script>");
+    echo ("<script>location.href='../../SignUp.html';</script>");
     exit();
   }
 }
@@ -50,6 +50,6 @@ $insertData = "
 mysqli_query($connect_object, $insertData) or die("Error Occured in Inserting Data to DB");
 
 echo ("<script language=javascript>alert('회원가입이 완료되었습니다!')</script>");
-echo ("<script>location.href='../SignIn.php';</script>");
+echo ("<script>location.href='../View/SignIn.php';</script>");
 
 mysqli_close($connect_object);

@@ -4,4 +4,4 @@ session_start();
 unset($_SESSION['user_id']);
 
 // 삭제한 후 로그인 페이지로 돌아감
-echo ("<script>location.href='../SignIn.php';</script>");
+echo ("<script>location.href='../View/SignIn.php';</script>");

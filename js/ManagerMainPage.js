@@ -11,7 +11,7 @@ function ajaxRequest(type, url, dataArr, success, error){
 function search(){
   $.ajax({
     type: "GET",
-    url : "php-Action/BookSearch.php",
+    url : "../../Action/BookSearch.php",
 
     data: {
       content : $('#searchBar').val(),
@@ -31,7 +31,7 @@ function search(){
 
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
-  selectButtons('Analysis-registerBook');
+  selectButtons('Manager-registerBook');
 }
 
 function Loading(){
@@ -48,7 +48,7 @@ function containerLoad(){
 
 function selectButtons(clickedButton){
 
-  let selectedButton = $('#AnalysisButtons').children('.active');
+  let selectedButton = $('#SidebarBtns').children('.active');
 
   // 이미 로딩 상태라면, 버튼 클릭에 반응하지 않는다.
   if(isloading){
@@ -56,7 +56,7 @@ function selectButtons(clickedButton){
   }
 
   // 클릭한 버튼이 이미 활성화 된 버튼인 경우, 아무 작업도 하지 않음.
-  if($('#' + clickedButton).attr('class') == $('#AnalysisButtons').children('.active').attr('id')){
+  if($('#' + clickedButton).attr('class') == $('#SidebarBtns').children('.active').attr('id')){
     return;
   }
   // 이외의 경우라면 기존 버튼에서 active를 제거하고 클릭된 버튼에 active를 준다.
@@ -84,7 +84,7 @@ function selectButtons(clickedButton){
       break;
   }
 
-  ajaxRequest("POST", `../php-Action/ManagerService/${selectedService}`, { URLID : urlID },
+  ajaxRequest("POST", `${selectedService}`, { URLID : urlID },
     (serviceHTML)=>{
       $('#ServiceSection').html(serviceHTML);
       containerLoad();

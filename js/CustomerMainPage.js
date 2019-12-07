@@ -16,7 +16,7 @@ function borrow(borrowBtn){
   if(canBorrow === "대출 가능"){
     $.ajax({
       type: "POST",
-      url : "php-Action/CustomerService/BorrowAction.php",
+      url : "../../Action/CustomerService/BorrowAction.php",
 
       data: {
         ISBN: ISBNStr
@@ -50,7 +50,7 @@ function reserve(reserveBtn){
   if(canReserve === "예약 가능"){
     $.ajax({
       type: "POST",
-      url : "php-Action/CustomerService/ReserveAction.php",
+      url : "../../Action/CustomerService/ReserveAction.php",
 
       data: {
         ISBN: ISBNStr
@@ -75,7 +75,7 @@ function reserve(reserveBtn){
 function search(){
   $.ajax({
     type: "GET",
-    url : "php-Action/BookSearch.php",
+    url : "../../Action/BookSearch.php",
 
     data: {
       content : $('#searchBar').val(),
@@ -95,7 +95,7 @@ function search(){
 
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
-  selectButtons('Analysis-search');
+  selectButtons('CustomerService-search');
 }
 
 function Loading(){
@@ -112,7 +112,7 @@ function containerLoad(){
 
 function selectButtons(clickedButton){
 
-  let selectedButton = $('#AnalysisButtons').children('.active');
+  let selectedButton = $('#SidebarBtns').children('.active');
 
   // 이미 로딩 상태라면, 버튼 클릭에 반응하지 않는다.
   if(isloading){
@@ -120,7 +120,7 @@ function selectButtons(clickedButton){
   }
 
   // 클릭한 버튼이 이미 활성화 된 버튼인 경우, 아무 작업도 하지 않음.
-  if($('#' + clickedButton).attr('class') == $('#AnalysisButtons').children('.active').attr('id')){
+  if($('#' + clickedButton).attr('class') == $('#SidebarBtns').children('.active').attr('id')){
     return;
   }
   // 이외의 경우라면 기존 버튼에서 active를 제거하고 클릭된 버튼에 active를 준다.
@@ -135,20 +135,17 @@ function selectButtons(clickedButton){
   switch (clickedButton) {
 
     case "CustomerService-search":
-      selectedService = "SearchBooksAction.php";
-      break;
-    case "CustomerService-leave":
-      selectedService = "LeaveAction.php";
+      selectedService = "SearchBooksView.php";
       break;
     case "CustomerService-borrowedBook":
-      selectedService = "BorrowedBooks.php";
+      selectedService = "BorrowedBooksView.php";
       break;
     case "CustomerService-reservedBook":
-      selectedService = "ReservedBooks.php";
+      selectedService = "ReservedBooksView.php";
       break;
   }
 
-  ajaxRequest("POST", `../php-Action/CustomerService/${selectedService}`, { URLID : urlID },
+  ajaxRequest("POST", `${selectedService}`, { URLID : urlID },
     (serviceHTML)=>{
       $('#ServiceSection').html(serviceHTML);
       containerLoad();

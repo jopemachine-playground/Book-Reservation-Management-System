@@ -8,7 +8,7 @@
     exit();
   }
 
-  require_once('./php-Action/MySQLConection.php');
+  require_once('../MySQLConection.php');
 
   // DB에서 기본 값을 빼내와, 디폴트 값으로 입력 폼에 넣어놓는다.
   $connect_object = MySQLConnection::DB_Connect('db_hw');
@@ -40,10 +40,10 @@
 
   <title>회원 정보 수정</title>
   <!-- Bootstrap 스타일 시트를 적용. min이 붙은 것은 난독화 파일이기 때문.-->
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/UserEdit.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/UserEdit.css">
   <!-- Favicon 적용 -->
-  <link rel="shortcut icon" size="16x16" href="./img/favicon.ico" />
+  <link rel="shortcut icon" size="16x16" href="../../img/favicon.ico" />
 
 </head>
 
@@ -54,7 +54,7 @@
   <nav id="FixedNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
 
       <!-- navbar-brand는 brand를 나타내는 일종의 강조 표시 -->
-      <a class="navbar-brand" href="./UserEdit.html"><img src="img/smile.svg" style="margin-right: 10px;">회원 정보 수정</a>
+      <a class="navbar-brand" href="./UserEdit.html"><img src="../../img/smile.svg" style="margin-right: 10px;">회원 정보 수정</a>
 
       <!-- 창 너비에 따라 버튼이 미디어 쿼리로, 두 종류로 나뉜다. -->
       <!-- 아래의 버튼은 창이 작을 때, 핸드폰이나 태블릿 같은 환경에서 사용할 버튼 및 a 태그 들이다.-->
@@ -101,7 +101,7 @@
 
     <!-- 파일을 함께 전송하므로, enctype은 multipart/form-data 여야 한다 -->
     <!-- SubmitButtonClicked()가 true를 반환하는 경우에만 서버로 데이터를 전송한다 -->
-    <form action="php-Action/UserEditAction.php" enctype="multipart/form-data" method="post">
+    <form action="phps/UserEditAction.php" enctype="multipart/form-data" method="post">
 
       <!-- form 태그를 통해 SignInAction.php를 거쳐 로그인 함 -->
       <!-- form-group 및 form-control 은 부트스트랩 css를 적용하기 위한 태그 -->

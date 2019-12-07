@@ -5,13 +5,13 @@
   // 세션에 ID가 없다면, 이용할 수 없으니, SignIn 페이지로 이동
   if(!isset($UserID)){
     echo ("<script language=javascript>alert('먼저 로그인하세요!')</script>");
-    echo ("<script>location.href='../SignIn.php';</script>");
+    echo ("<script>location.href='../../View/SignIn.php';</script>");
     exit();
   }
 
   echo sprintf('
 
-    <form action="php-Action/ManagerService/RegisterBookAction.php" enctype="multipart/form-data" method="post">
+    <form action="phps/ManagerService/RegisterBookAction.php" enctype="multipart/form-data" method="post">
 
       <div class="form-group">
         <label for="ISBN">ISBN</label>

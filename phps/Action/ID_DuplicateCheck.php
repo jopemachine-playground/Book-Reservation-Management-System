@@ -1,5 +1,5 @@
 <?php
-require_once('MySQLConection.php');
+require_once('../MySQLConection.php');
 
 $UserNewID      = $_GET["userID"];
 

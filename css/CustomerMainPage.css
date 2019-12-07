@@ -98,11 +98,11 @@ textarea {
 .sideButton:hover:not(.active) {
   background-color: #f7f7f7 !important; }
 
-#AnalysisButtons a {
+#SidebarBtns a {
   background-color: #f0f0f0;
   border: none;
   color: #000000; }
-  #AnalysisButtons a.active {
+  #SidebarBtns a.active {
     background-color: #474747;
     border: none;
     color: #ffffff; }

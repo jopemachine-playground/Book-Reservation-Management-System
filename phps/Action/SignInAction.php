@@ -2,11 +2,14 @@
 
   session_start();
 
-  if(isset($_SESSION['user_id'])){
-    echo "<script>location.href='../CustomerMainPage.php';</script>";
+  if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != "manager"){
+    echo "<script>location.href='../View/CustomerService/CustomerMainPage.php';</script>";
+  }
+  else if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == "manager"){
+    echo "<script>location.href='../View/ManagerService/ManagerMainPage.php';</script>";
   }
 
-  require_once('MySQLConection.php');
+  require_once('../MySQLConection.php');
 
   $connect_object = MySQLConnection::DB_Connect('db_hw');
 
@@ -25,21 +28,21 @@
 
   if(empty($row)){
     echo ("<script language=javascript>alert('존재하지 않는 계정입니다.')</script>");
-    echo ("<script>location.href='../SignIn.php';</script>");
+    echo ("<script>location.href='../View/SignIn.php';</script>");
     exit();
   }
 
   else if($row['PW'] != $PW){
     echo ("<script language=javascript>alert('입력하신 ID의 비밀번호가 일치하지 않습니다.')</script>");
-    echo ("<script>location.href='../SignIn.php';</script>");
+    echo ("<script>location.href='../View/SignIn.php';</script>");
     exit();
   }
 
   $_SESSION['user_id'] = $ID;
 
   if($row['ID'] == "manager"){
-    echo ("<script>location.href='../ManagerMainPage.php';</script>");
+    echo ("<script>location.href='../View/ManagerService/ManagerMainPage.php';</script>");
     exit();
   }
 
-  echo ("<script>location.href='../CustomerMainPage.php';</script>");
+  echo ("<script>location.href='../View/CustomerService/CustomerMainPage.php';</script>");

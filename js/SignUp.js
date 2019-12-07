@@ -35,7 +35,7 @@ function ToLogin(){
 function UserID_DuplicateCheck(){
   $.ajax({
     type: "GET",
-    url : "php-Action/ID_DuplicateCheck.php",
+    url : "phps/ID_DuplicateCheck.php",
     data: { userID : $('#ID').val() },
 
     success : function(data, status, xhr) {

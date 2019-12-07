@@ -3,10 +3,10 @@
   session_start();
 
   if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != "manager"){
-    echo "<script>location.href='../CustomerMainPage.php';</script>";
+    echo "<script>location.href='../View/CustomerService/CustomerMainPage.php';</script>";
   }
   else if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == "manager"){
-    echo "<script>location.href='../ManagerMainPage.php';</script>";
+    echo "<script>location.href='../View/ManagerService/ManagerMainPage.php';</script>";
   }
 
 ?>
@@ -23,11 +23,11 @@
   <title>로그인</title>
 
   <!-- Bootstrap 스타일 시트를 적용. min이 붙은 것은 난독화 파일이기 때문.-->
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
   <!-- 커스텀 스타일 시트 -->
-  <link rel="stylesheet" href="./css/SignIn.css">
+  <link rel="stylesheet" href="../../css/SignIn.css">
   <!-- Favicon 적용 -->
-  <link rel="shortcut icon" size="16x16" href="./img/favicon.ico" />
+  <link rel="shortcut icon" size="16x16" href="../../img/favicon.ico" />
 
 </head>
 
@@ -41,7 +41,7 @@
     <nav id="FixedNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
       <!-- navbar-brand는 brand를 나타내는 일종의 강조 표시 -->
 
-      <a class="navbar-brand" href="./SignIn.php" style="float: left !important;"><img src="img/smile.svg" style="margin-right: 10px;">도서 관리 서비스</a>
+      <a class="navbar-brand" href="./SignIn.php" style="float: left !important;"><img src="../../img/smile.svg" style="margin-right: 10px;">도서 관리 서비스</a>
 
     </nav>
 
@@ -50,7 +50,7 @@
       <p id="Title" class="lead">Login</p>
       <p id="Title-lead" class="lead">도서 관리 시스템에 로그인하세요.</p>
 
-      <form action="php-Action/SignInAction.php" onsubmit="return SubmitButtonClicked()" method="post">
+      <form action="../Action/SignInAction.php" onsubmit="return SubmitButtonClicked()" method="post">
         <div class="form-group">
           <label for="ID">ID </label>
           <!-- autofocuse를 통해 쉽게 로그인할 수 있게 도움 -->
