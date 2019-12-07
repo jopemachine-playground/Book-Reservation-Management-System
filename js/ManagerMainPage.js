@@ -74,7 +74,7 @@ function selectButtons(clickedButton){
       selectedService = "RegisterBookView.php";
       break;
     case "Manager-searchBook":
-      selectedService = "SearchBooksActionView.php"
+      selectedService = "SearchBooksView.php"
       break;
     case "Manager-edit":
       selectedService = "EditBookInfoView.php";

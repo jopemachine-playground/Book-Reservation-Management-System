@@ -47,7 +47,7 @@
     <div class="container">
       <!-- 인라인으로 스타일을 준 것은, bootstrap.css에서 색상 속성이 !important로 선언되어 있기 때문임. boostrap 파일을 변경하기보단, 인라인으로 새 속성을 주었음 -->
       <nav id="FixedNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <img src="../../img/smile.svg" style="margin-right: 10px;">
+        <img src="../../../img/smile.svg" style="margin-right: 10px;">
         <a class="navbar-brand" href="#">도서 관리 예약 서비스</a>
 
         <!-- 창 너비에 따라 버튼이 미디어 쿼리로, 두 종류로 나뉜다. -->
@@ -72,7 +72,7 @@
         <!-- 텍스트를 중간에 배치하기 위해 버튼들을 absoulte로 놓고 오른쪽엔 div로 따로 공간을 두었음 -->
         <!-- sizeUpOnHover가 들어간 엘리먼트는 hover 하면 크기가 커짐 -->
         <div class="btn-group float-right responsiveNone">
-          <button type="button" class="btn-sm side_btn dropdown-toggle sizeUpOnHover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/menu.svg" alt="sidebar menu"></button>
+          <button type="button" class="btn-sm side_btn dropdown-toggle sizeUpOnHover" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../../img/menu.svg" alt="sidebar menu"></button>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="../../Action/SignOutAction.php">로그아웃</a>
           </div>
@@ -84,7 +84,7 @@
     <section class="mt-1" style="padding-top: 75px; padding-left: 5%; padding-right: 5%;">
       <div class="row">
         <div class="col-md-3" style="margin-bottom: 15px;">
-          <div id="AnalysisButtons" class="list-group">
+          <div id="SidebarBtns" class="list-group">
             <a id="Manager-registerBook" href="#" class="list-group-item sideButton active" onclick="selectButtons(this.id)">도서 등록</a>
             <a id="Manager-searchBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 검색</a>
             <a id="Manager-edit" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 정보 수정</a>
