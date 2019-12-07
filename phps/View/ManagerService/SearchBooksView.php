@@ -11,7 +11,7 @@
 
   echo sprintf('
     <div class="list-group">
-      <a class="list-group-item active" style="background-color: #474747!important; color: #ffffff; border: none !important;">책 검색 및 대출, 예약</a>
+      <a class="list-group-item active" style="background-color: #474747!important; color: #ffffff; border: none !important;">도서 검색</a>
       <div class="list-group-item">
         <input id="searchWithBookName" type="radio" name="fruit" checked="checked" value="searchWithBookName" /> 책 제목
         <input id="searchWithISBN" type="radio" name="fruit" value="searchWithISBN" /> ISBN

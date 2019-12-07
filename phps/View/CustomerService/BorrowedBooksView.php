@@ -44,13 +44,24 @@
     $BookName = $oneBook[1];
     $PublishHouse = $oneBook[2];
     $Author = $oneBook[3];
+    $ReturnReq = $oneBook[4];
     $BorrowedUserID = $oneBook[5];
 
     $ReservedUserID = "예약 중이지 않습니다.";
 
+    $HasReturnReq = "";
+
     if(isset($oneBook[10])) {
       $ReservedUserID = "예약 중인 유저: " . $oneBook[10];
     }
+
+    if($ReturnReq === 0) {
+      $ReturnReq = "false";
+    }
+    else {
+      $ReturnReq = "true";
+    }
+
 
     $resComponent .= sprintf('
       <div class="list-group">
@@ -60,10 +71,11 @@
           <div>출판사: %s</div>
           <div>저자: %s</div>
           <div class="canReserve">예약 존재 여부: %s</div>
+          <div class="canReserve">반납 요청 여부: %s</div>
         </div>
         <button type="submit" class="btn btn-white btn-block" style="" onclick="reqReturn($(this))">반납 요청</button>
       </div>
-    ', $BookName, $ISBN, $PublishHouse, $Author, $ReservedUserID);
+    ', $BookName, $ISBN, $PublishHouse, $Author, $ReservedUserID, $ReturnReq);
   }
 
   echo sprintf('

@@ -42,7 +42,7 @@
           <div>출판사: %s</div>
           <div>저자: %s</div>
         </div>
-        <button type="submit" class="btn btn-white btn-block" style="" onclick="cancelReturn($(this))">예약 취소</button>
+        <button type="submit" class="btn btn-white btn-block" style="" onclick="cancelReservation($(this))">예약 취소</button>
       </div>
     ', $BookName, $ISBN, $PublishHouse, $Author);
   }

@@ -48,9 +48,6 @@ function reserve(reserveBtn){
   let ISBNStr = reserveBtn.prev().prev().children(".ISBN").html().split(": ")[1];
   let canReserve = reserveBtn.prev().prev().children(".canReserve").html().split(": ")[1];
 
-  console.log(canReserve);
-  console.log(canReserve === "예약 가능");
-
   if(canReserve === "예약 가능"){
     $.ajax({
       type: "POST",
@@ -90,6 +87,51 @@ function search(){
     success : function(data, status, xhr) {
       console.log("검색 성공");
       $('#searchContent').html(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
+function reqReturn(retBtn){
+
+  let ISBNStr = retBtn.prev().children(".ISBN").html().split(": ")[1];
+
+  $.ajax({
+    type: "POST",
+    url : "../../Action/CustomerService/ReturnAction.php",
+
+    data: {
+      ISBN: ISBNStr
+    },
+
+    success : function(data, status, xhr) {
+      console.log("반납 성공");
+      alert("책 반납에 성공했습니다!");
+      location.reload();
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
+function cancelReservation(cancelBtn){
+
+  let ISBNStr = cancelBtn.prev().children(".ISBN").html().split(": ")[1];
+
+  $.ajax({
+    type: "POST",
+    url : "../../Action/CustomerService/CancelReserveAction.php",
+
+    data: {
+      ISBN: ISBNStr
+    },
+
+    success : function(data, status, xhr) {
+      alert("예약 취소에 성공했습니다!");
+      location.reload();
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
