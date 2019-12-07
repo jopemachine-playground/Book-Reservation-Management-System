@@ -89,6 +89,7 @@
             <a id="Manager-searchBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 검색</a>
             <a id="Manager-edit" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 정보 수정</a>
             <a id="Manager-acceptReturnBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">도서 반납 승인</a>
+            <a id="Manager-deleteBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">등록 도서 삭제</a>
           </div>
         </div>
 

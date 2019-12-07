@@ -1,5 +1,5 @@
 <?php
-  // 세션에 ID가 있다면, 로그인 된 상태이므로 바로 URL-Register로 이동
+
   session_start();
 
   if(isset($_SESSION['user_id']) && $_SESSION['user_id'] != "manager"){

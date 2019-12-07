@@ -32,6 +32,8 @@
     $PublishHouse = $oneBook[2];
     $Author = $oneBook[3];
 
+    // <div class="canReserve">예약 존재 여부: %s</div>
+    
     $resComponent .= sprintf('
       <div class="list-group">
         <div class="BookInfo" class="list-group-item">
@@ -39,7 +41,6 @@
           <div class="ISBN">ISBN: %s</div>
           <div>출판사: %s</div>
           <div>저자: %s</div>
-          <div class="canReserve">예약 존재 여부: %s</div>
         </div>
         <button type="submit" class="btn btn-white btn-block" style="" onclick="acceptReturn($(this))">반납 승인</button>
       </div>

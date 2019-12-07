@@ -29,6 +29,26 @@ function search(){
   });
 }
 
+function deleteBook(delBtn){
+  $.ajax({
+    type: "POST",
+    url : "../../Action/ManagerService/DeleteRegisteredBookAction.php",
+
+    data: {
+      ISBN : $('#bookISBNToDelete').val()
+    },
+
+    success : function(data, status, xhr) {
+      console.log("검색 성공" + data);
+      alert("데이터베이스에서 입력하신 도서를 제거했습니다.");
+      location.reload();
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
   selectButtons('Manager-registerBook');
@@ -81,6 +101,9 @@ function selectButtons(clickedButton){
       break;
     case "Manager-acceptReturnBook":
       selectedService = "AcceptBookReturnView.php";
+      break;
+    case "Manager-deleteBook":
+      selectedService = "DeleteRegisteredBookView.php";
       break;
   }
 
