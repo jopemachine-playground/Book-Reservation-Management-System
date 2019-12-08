@@ -49,6 +49,25 @@ function deleteBook(delBtn){
   });
 }
 
+function withdrawCustomer(){
+  $.ajax({
+    type: "POST",
+    url : "../../Action/ManagerService/CustomerWithdrawalAction.php",
+
+    data: {
+      ID : $('#customerIDToDelete').val()
+    },
+
+    success : function(data, status, xhr) {
+      alert("데이터베이스에서 입력하신 유저를 제거했습니다.");
+      location.reload();
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
   selectButtons('Manager-registerBook');

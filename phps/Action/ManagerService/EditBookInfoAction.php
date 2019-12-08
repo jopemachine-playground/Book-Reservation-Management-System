@@ -2,7 +2,7 @@
   session_start();
   $UserID = $_SESSION['user_id'];
 
-  require_once('../MySQLConection.php');
+  require_once('../../MySQLConection.php');
 
   // DB 연결
   $connect_object = MySQLConnection::DB_Connect('db_hw');
@@ -30,3 +30,5 @@
   mysqli_query($connect_object, $updateUserRecord) or die("Error Occured in inserting Data to DB");
 
   echo ("<script language=javascript>alert('수정 완료!')</script>");
+
+ header('location:'. $_SERVER['HTTP_REFERER']);

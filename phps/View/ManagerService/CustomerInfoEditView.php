@@ -6,18 +6,18 @@
 
       <div class="list-group-item">
 
-        <form action="../../Action/ManagerService/UserEditAction.php" enctype="multipart/form-data" method="post">
+        <form action="../../Action/ManagerService/CustomerInfoEditAction.php" enctype="multipart/form-data" method="post">
 
           <div class="form-group">
             <label for="ID">ID</label>
-            <input id="ID" type="text" name="ID" class="form-control" maxlength="20" placeholder="4글자 이상, 20자 이내로 입력해주세요." title="ID를 입력하세요." autofocus required disabled>
+            <input id="ID" type="text" name="ID" class="form-control" maxlength="20" placeholder="변경할 유저의 ID를 입력하세요." title="ID를 입력하세요." autofocus required>
             <label for="IDCheck" style="display:inline;"></label>
 
           </div>
 
           <div class="form-group">
             <label for="PW">PW</label>
-            <input id="PW" type="password" name="PW" class="form-control" maxlength="20" placeholder="4글자 이상, 20자 이내로 입력해주세요." title="비밀번호를 입력하세요." required>
+            <input id="PW" type="password" name="PW" class="form-control" maxlength="20" placeholder="4글자 이상, 20자 이내로 입력해주세요." title="비밀번호를 입력하세요.">
           </div>
 
           <br>

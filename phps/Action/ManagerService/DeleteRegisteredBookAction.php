@@ -2,7 +2,7 @@
   session_start();
   $UserID = $_SESSION['user_id'];
 
-  require_once('../MySQLConection.php');
+  require_once('../../MySQLConection.php');
 
   // DB 연결
   $connect_object = MySQLConnection::DB_Connect('db_hw');
