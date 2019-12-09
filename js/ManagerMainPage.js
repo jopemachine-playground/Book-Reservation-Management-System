@@ -90,6 +90,25 @@ function acceptReturn(acceptBtn){
   });
 }
 
+function toptenFetch(){
+  $.ajax({
+    type: "POST",
+    url : "../../Action/ManagerService/TopTenMemberAction.php",
+
+    data: {
+      FromDate: $('#fromDate').val(),
+      UntilDate: $('#untilDate').val()
+    },
+
+    success : function(data, status, xhr) {
+      $('#toptenContent').html(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
   selectButtons('Manager-registerBook');
