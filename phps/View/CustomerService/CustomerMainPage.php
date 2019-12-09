@@ -120,6 +120,8 @@
     <script src="../../../lib/bootstrap.min.js"></script>
     <!-- MDB 라이브러리 추가하기 -->
     <script src="../../../lib/mdb.min.js"></script>
+    <!-- 제이쿼리 플러그인 -->
+    <script src="../../../lib/jquery.cookie.js"></script>
     <!-- 커스텀 자바스크립트 추가하기 -->
     <script src="../../../js/CustomerMainPage.js"></script>
     <!-- Chart JS 추가 -->

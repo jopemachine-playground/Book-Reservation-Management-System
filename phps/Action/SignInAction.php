@@ -39,6 +39,7 @@
   }
 
   $_SESSION['user_id'] = $ID;
+  setcookie('user_position', $row['Position'], "/");
 
   if($row['ID'] == "manager"){
     echo ("<script>location.href='../View/ManagerService/ManagerMainPage.php';</script>");

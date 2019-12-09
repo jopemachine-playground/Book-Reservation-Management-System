@@ -1,6 +1,7 @@
 // 왼쪽 버튼을 누르면 해당하는 php Action을 실행해 serviceSection에 띄운다.
 var urlID = getParameterByName('db');
 // 현재 로딩 중인지 나타내는 bool형 변수
+
 var isloading = false;
 
 function ajaxRequest(type, url, dataArr, success, error){
@@ -14,19 +15,22 @@ function borrow(borrowBtn){
   let canBorrow = (borrowBtn.prev().children(".canBorrow").html().split(": ")[1] === "대출 가능");
   let isReserved = (borrowBtn.prev().children(".canReserve").html().split(": ")[1] !== "예약 가능");
 
+  console.log($.cookie('user_position'));
+
   if(canBorrow && !isReserved){
     $.ajax({
       type: "POST",
       url : "../../Action/CustomerService/BorrowAction.php",
 
       data: {
-        ISBN: ISBNStr
+        ISBN: ISBNStr,
+        Position: $.cookie('user_position')
       },
 
       success : function(data, status, xhr) {
-        console.log("대출 성공");
-        alert("대출 성공했습니다.");
-        location.reload();
+        console.log(data);
+        // alert("대출 성공했습니다.");
+        // location.reload();
       },
       error: function(jqXHR, textStatus, errorThrown) {
         console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
@@ -39,7 +43,6 @@ function borrow(borrowBtn){
   else {
     alert("예약 도서입니다!");
   }
-
 }
 
 // 책을 예약
