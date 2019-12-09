@@ -68,6 +68,28 @@ function withdrawCustomer(){
   });
 }
 
+function acceptReturn(acceptBtn){
+
+  let ISBNStr = acceptBtn.prev().children(".ISBN").html().split(": ")[1];
+
+  $.ajax({
+    type: "POST",
+    url : "../../Action/ManagerService/AcceptBookReturnAction.php",
+
+    data: {
+      ISBN : ISBNStr
+    },
+
+    success : function(data, status, xhr) {
+      alert("반납요청을 수락했습니다.");
+      location.reload();
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
   selectButtons('Manager-registerBook');
