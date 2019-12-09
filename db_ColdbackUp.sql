@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 19-12-07 07:27
+-- 생성 시간: 19-12-09 11:56
 -- 서버 버전: 10.3.16-MariaDB
 -- PHP 버전: 7.1.30
 
@@ -56,17 +56,16 @@ CREATE TABLE `borrow` (
   `ISBN` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
   `UserID` varchar(40) CHARACTER SET utf8mb4 NOT NULL,
   `LoanDate` datetime NOT NULL DEFAULT current_timestamp(),
-  `ReturnDate` date DEFAULT NULL
+  `ReturnDate` datetime DEFAULT NULL,
+  `ReturnDueDate` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- 테이블의 덤프 데이터 `borrow`
 --
 
-INSERT INTO `borrow` (`ID`, `ISBN`, `UserID`, `LoanDate`, `ReturnDate`) VALUES
-('0a36d872d6', '12213154', 'startup', '2019-12-06 22:32:50', NULL),
-('694bd3654a', '1558586383', 'startup', '2019-12-06 22:42:07', NULL),
-('c321dc1a31', '12312312', 'startup', '2019-12-07 15:05:43', NULL);
+INSERT INTO `borrow` (`ID`, `ISBN`, `UserID`, `LoanDate`, `ReturnDate`, `ReturnDueDate`) VALUES
+('d86713d497', '12312312', 'startup', '2019-12-09 12:29:55', '2019-12-09 19:51:33', '2019-12-19 12:29:55');
 
 -- --------------------------------------------------------
 
@@ -80,13 +79,6 @@ CREATE TABLE `reservation` (
   `ISBN` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
   `ReservedDate` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- 테이블의 덤프 데이터 `reservation`
---
-
-INSERT INTO `reservation` (`ID`, `UserID`, `ISBN`, `ReservedDate`) VALUES
-('abc7c75c45', 'startup', '12312312', '2019-12-06 22:41:06');
 
 -- --------------------------------------------------------
 
@@ -109,7 +101,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID`, `PW`, `Name`, `Email`, `Telephone`, `Position`) VALUES
 ('manager', '1234', '매니저', NULL, NULL, '관리자'),
-('startup', '1234', 'Gyu Bong Lee', 'jopemachine@naver.com', '010-5547-2540', 'í•™ë¶€ìƒ');
+('sdfds', '1234', 'Gyu Bong Lee', 'jopemachine@naver.com', '010-5547-2540', 'êµì§ì›'),
+('startup', '1234', 'ì´ê·œë´‰', 'jopemachine@naver.com', '010-5547-2540', 'í•™ë¶€ìƒ');
 
 --
 -- 덤프된 테이블의 인덱스

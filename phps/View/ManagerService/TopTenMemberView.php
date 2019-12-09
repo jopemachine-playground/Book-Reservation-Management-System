@@ -15,10 +15,10 @@
       <div class="list-group-item">
         <p class="lead">일정 기간 동안 가장 대출을 많이한 회원들을 조회합니다.</p>
         <label>~ 부터: </label>
-        <input type="date" id="fromDate" name="fromDate" value="2019-12-10">
+        <input type="date" id="fromDate" name="fromDate">
         <br />
         <label>~ 까지: </label>
-        <input type="date" id="untilDate" name="untilDate" value="2019-12-10">
+        <input type="date" id="untilDate" name="untilDate">
         <br />
         <input type="submit" value="조회" onclick="toptenFetch()">
       </div>

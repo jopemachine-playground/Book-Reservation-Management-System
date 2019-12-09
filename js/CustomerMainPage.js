@@ -137,6 +137,26 @@ function cancelReservation(cancelBtn){
   });
 }
 
+function haveBorrowedBookFetch(){
+  $.ajax({
+    type: "POST",
+    url : "../../Action/CustomerService/HaveBorrowedBooksAction.php",
+
+    data: {
+      FromDate: $('#fromDate').val(),
+      UntilDate: $('#untilDate').val()
+    },
+
+    success : function(data, status, xhr) {
+      console.log(data);
+      $('#haveBorrowedBooks').html(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
+}
+
 // 디폴트로 Analysis-recentComments가 클릭되게 한다.
 window.onload = function(){
   selectButtons('CustomerService-search');
