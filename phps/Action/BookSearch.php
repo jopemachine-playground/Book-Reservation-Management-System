@@ -23,8 +23,12 @@
     $searchBook = "
       SELECT *
       FROM book
-      LEFT OUTER JOIN borrow
-      ON book.ISBN = borrow.ISBN
+      LEFT OUTER JOIN (
+        SELECT *
+        FROM borrow
+        WHERE ReturnDate IS NULL
+      ) AS currentBorrowingTbl
+      ON book.ISBN = currentBorrowingTbl.ISBN
       LEFT OUTER JOIN reservation
       ON book.ISBN = reservation.ISBN
       WHERE book.ISBN LIKE \"%". $Content . "%\"
@@ -34,8 +38,12 @@
     $searchBook = "
       SELECT *
       FROM book
-      LEFT OUTER JOIN borrow
-      ON book.ISBN = borrow.ISBN
+      LEFT OUTER JOIN (
+        SELECT *
+        FROM borrow
+        WHERE ReturnDate IS NULL
+      ) AS currentBorrowingTbl
+      ON book.ISBN = currentBorrowingTbl.ISBN
       LEFT OUTER JOIN reservation
       ON book.ISBN = reservation.ISBN
       WHERE book.Name LIKE \"%". $Content . "%\"
@@ -57,6 +65,7 @@
   // 3 : Author
   // 4 : ReturnReq
   // 5 : 대출한 사람의 ID (대출 중인 경우)
+  // 9 : 반납 날짜
   // 12: 예약 중인 경우 예약자의 ID
 
   while($oneBook = mysqli_fetch_array($searchRes)){
