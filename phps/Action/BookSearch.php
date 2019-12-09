@@ -53,7 +53,7 @@
       ORDER BY book.ISBN
     ";
   }
-  
+
   $resComponent = "";
 
   $searchRes = mysqli_query($connect_object, $searchBook) or die("Error Occured in Searching Data to DB");
@@ -70,18 +70,25 @@
   // 4 : ReturnReq
   // 5 : 대출한 사람의 ID (대출 중인 경우)
   // 9 : 반납 날짜
+  // 10: 반납되어야할 날짜
   // 12: 예약 중인 경우 예약자의 ID
 
   while($oneBook = mysqli_fetch_array($searchRes)){
 
+    $ISBN = $oneBook[0];
+    $Name = $oneBook[1];
+    $PublishHouse = $oneBook[2];
+    $Author = $oneBook[3];
+
     $BorrowingUserID = $oneBook[5];
     $ReservePersonnel = $oneBook[15];
+    $ReturnDueDate = $oneBook[10];
 
     if(empty($BorrowingUserID)) {
       $BorrowingUserID = "대출 가능";
     }
     else {
-      $BorrowingUserID = "대출 중";
+      $BorrowingUserID = "대출 중, ". $ReturnDueDate ." 까지 반납예정";
     }
 
     $resComponent .= sprintf('
@@ -97,7 +104,7 @@
         <button type="submit" class="btn btn-white btn-block" style="" onclick="borrow($(this))">대출</button>
         <button type="submit" class="btn btn-white btn-block" style="margin-bottom: 35px;" onclick="reserve($(this))">예약</button>
       </div>
-    ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $BorrowingUserID, $ReservePersonnel);
+    ', $Name, $ISBN, $PublishHouse, $Author, $BorrowingUserID, $ReservePersonnel);
   }
 
   echo $resComponent;
