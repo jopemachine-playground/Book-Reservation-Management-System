@@ -189,6 +189,9 @@ function selectButtons(clickedButton){
     case "CustomerService-reservedBook":
       selectedService = "ReservedBooksView.php";
       break;
+    case "CustomerService-haveBorrowedBook":
+      selectedService = "HaveBorrowedBooksView.php";
+      break;
   }
 
   ajaxRequest("POST", `${selectedService}`, { URLID : urlID },

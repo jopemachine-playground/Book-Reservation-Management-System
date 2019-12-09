@@ -14,7 +14,7 @@
     exit();
   }
 
-  // 현재 빌리고 있는 책들을 조회
+  // 현재 빌렸던 책들을 모두 조회
   $searchBorrowedBook = "
     SELECT *
     FROM book AS bookTbl
@@ -25,7 +25,7 @@
     ON bookTbl.ISBN = borrowTbl.ISBN
     LEFT OUTER JOIN reservation AS reservationTbl
     ON reservationTbl.ISBN = bookTbl.ISBN
-    WHERE borrowTbl.ReturnDate IS NULL
+    WHERE borrowTbl.ReturnDate IS NOT NULL
   ";
 
   $searchRes = mysqli_query($connect_object, $searchBorrowedBook) or die("Error Occured in Fetching data in DB");
@@ -35,8 +35,8 @@
   // 2 : PublishHouse
   // 3 : Author
   // 4 : ReturnReq
-  // 5 : 대출한 사람의 ID
-  // 10: 예약 중인 경우 예약 ID
+  // 8 : 대출 DateTime
+  // 9 : 반납 DateTime
 
   $resComponent = "";
 
@@ -46,24 +46,9 @@
     $BookName = $oneBook[1];
     $PublishHouse = $oneBook[2];
     $Author = $oneBook[3];
-    $ReturnReq = $oneBook[4];
-    $BorrowedUserID = $oneBook[5];
 
-    $ReservedUserID = "예약 중이지 않습니다.";
-
-    $HasReturnReq = "";
-
-    if(isset($oneBook[10])) {
-      $ReservedUserID = "예약 중인 유저: " . $oneBook[10];
-    }
-
-    if($ReturnReq === 0) {
-      $ReturnReq = "false";
-    }
-    else {
-      $ReturnReq = "true";
-    }
-
+    $LoanDate = $oneBook[8];
+    $ReturnedDate = $oneBook[9];
 
     $resComponent .= sprintf('
       <div class="list-group">
@@ -72,19 +57,18 @@
           <div class="ISBN">ISBN: %s</div>
           <div>출판사: %s</div>
           <div>저자: %s</div>
-          <div class="canReserve">예약 존재 여부: %s</div>
-          <div class="canReserve">반납 요청 여부: %s</div>
+          <div>대출날짜: %s</div>
+          <div>반납날짜: %s</div>
         </div>
-        <button type="submit" class="btn btn-white btn-block" style="" onclick="reqReturn($(this))">반납 요청</button>
       </div>
-    ', $BookName, $ISBN, $PublishHouse, $Author, $ReservedUserID, $ReturnReq);
+    ', $BookName, $ISBN, $PublishHouse, $Author, $LoanDate, $ReturnedDate);
   }
 
   echo sprintf('
     <div class="list-group">
-      <a class="list-group-item active" style="background-color: #474747!important; color: #ffffff; border: none !important;">내가 대출한 책 목록</a>
+      <a class="list-group-item active" style="background-color: #474747!important; color: #ffffff; border: none !important;">대출했던 도서들</a>
       <div class="list-group-item">
-        <p class="lead">빌린 책을 조회합니다.</p>
+        <p class="lead">대출했던 책들의 목록을 조회합니다.</p>
         %s
       </div>
     </div>

@@ -96,7 +96,7 @@
             <a id="CustomerService-search" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">검색</a>
             <a id="CustomerService-reservedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 예약한 도서</a>
             <a id="CustomerService-borrowedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">내가 대출한 도서</a>
-            <!-- <a id="CustomerService-leave" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">회원 탈퇴</a> -->
+            <a id="CustomerService-haveBorrowedBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">대출했던 도서목록</a>
           </div>
         </div>
 
