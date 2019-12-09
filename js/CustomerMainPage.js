@@ -13,9 +13,7 @@ function borrow(borrowBtn){
 
   let ISBNStr = borrowBtn.prev().children(".ISBN").html().split(": ")[1];
   let canBorrow = (borrowBtn.prev().children(".canBorrow").html().split(": ")[1] === "대출 가능");
-  let isReserved = (borrowBtn.prev().children(".canReserve").html().split(": ")[1] !== "예약 가능");
-
-  console.log($.cookie('user_position'));
+  let isReserved = (borrowBtn.prev().children(".canReserve").html().split(": ")[1] !== "0");
 
   if(canBorrow && !isReserved){
     $.ajax({
@@ -28,9 +26,8 @@ function borrow(borrowBtn){
       },
 
       success : function(data, status, xhr) {
-        console.log(data);
-        // alert("대출 성공했습니다.");
-        // location.reload();
+        alert("대출 성공했습니다.");
+        location.reload();
       },
       error: function(jqXHR, textStatus, errorThrown) {
         console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);

@@ -36,3 +36,5 @@
   mysqli_query($connect_object, $insertData) or die("Error Occured in inserting Data to DB");
 
   echo ("<script language=javascript>alert('등록 완료!')</script>");
+
+  echo ("<script>location.href='../../View/ManagerService/ManagerMainPage.php';</script>");

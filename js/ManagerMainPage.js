@@ -91,6 +91,9 @@ function acceptReturn(acceptBtn){
 }
 
 function toptenFetch(){
+
+  console.log($('#fromDate').val());
+
   $.ajax({
     type: "POST",
     url : "../../Action/ManagerService/TopTenMemberAction.php",

@@ -99,10 +99,6 @@
         <label for="ID">ID <strong>* </strong></label>
         <input id="ID" value="<?=$ID;?>" type="text" name="ID" class="form-control" maxlength="20" placeholder="4글자 이상, 20자 이내로 입력해주세요." title="ID를 입력하세요." autofocus required disabled>
         <label for="IDCheck" style="display:inline;"></label>
-
-        <!-- outline이 들어가면 border 쪽에만 색이 들어감. sm은 small. 크기를 작게 만듬-->
-        <!-- 따라서, btn-outline-info은 하늘색 테두리를 그리는 속성 -->
-        <input id="IDDuplicateCheckButton" name="IDCheck" value="중복확인" type="submit" onclick="UserID_DuplicateCheck()" class="btn btn-outline-info btn-sm">
       </div>
 
       <div class="form-group">

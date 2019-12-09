@@ -31,4 +31,4 @@
 
   echo ("<script language=javascript>alert('수정 완료!')</script>");
 
- header('location:'. $_SERVER['HTTP_REFERER']);
+  echo ("<script>location.href='../../View/ManagerService/ManagerMainPage.php';</script>");
