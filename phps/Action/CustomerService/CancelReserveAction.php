@@ -16,9 +16,11 @@
   $connect_object = MySQLConnection::DB_Connect('db_hw') or die("Error Occured in Connection to DB");
 
   $ISBN = $_POST["ISBN"];
-  
+
   $deleteReservation = "
-    DELETE FROM reservation WHERE ISBN ='$ISBN'
+    DELETE
+    FROM reservation
+    WHERE ISBN ='$ISBN' AND UserID = '$UserID'
   ";
 
   mysqli_query($connect_object, $deleteReservation) or die("Error Occured in Updating data in DB");

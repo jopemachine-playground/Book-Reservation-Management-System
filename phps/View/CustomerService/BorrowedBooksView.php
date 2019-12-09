@@ -16,7 +16,7 @@
 
   // 현재 빌리고 있는 책들을 조회
   $searchBorrowedBook = "
-    SELECT *
+    SELECT *, count(reservationTbl.ISBN) AS ReservePersonnel
     FROM book AS bookTbl
     RIGHT OUTER JOIN
     (SELECT *
@@ -26,6 +26,8 @@
     LEFT OUTER JOIN reservation AS reservationTbl
     ON reservationTbl.ISBN = bookTbl.ISBN
     WHERE borrowTbl.ReturnDate IS NULL
+    GROUP BY bookTbl.ISBN
+    ORDER BY bookTbl.ISBN
   ";
 
   $searchRes = mysqli_query($connect_object, $searchBorrowedBook) or die("Error Occured in Fetching data in DB");
@@ -49,13 +51,11 @@
     $ReturnReq = $oneBook[4];
     $BorrowedUserID = $oneBook[5];
 
-    $ReservedUserID = "예약 중이지 않습니다.";
+    $ReturnDueDate = $oneBook[10];
+
+    $ReservePersonnel = $oneBook[15];
 
     $HasReturnReq = "";
-
-    if(isset($oneBook[10])) {
-      $ReservedUserID = "예약 중인 유저: " . $oneBook[10];
-    }
 
     if($ReturnReq === "0") {
       $ReturnReq = "false";
@@ -64,7 +64,6 @@
       $ReturnReq = "true";
     }
 
-
     $resComponent .= sprintf('
       <div class="list-group">
         <div class="BookInfo" class="list-group-item">
@@ -72,12 +71,14 @@
           <div class="ISBN">ISBN: %s</div>
           <div>출판사: %s</div>
           <div>저자: %s</div>
-          <div class="canReserve">예약 존재 여부: %s</div>
+          <div class="canReserve">예약 중인 인원: %s</div>
           <div class="canReserve">반납 요청 여부: %s</div>
+          <div class="canReserve">반납 기한: %s</div>
         </div>
         <button type="submit" class="btn btn-white btn-block" style="" onclick="reqReturn($(this))">반납 요청</button>
       </div>
-    ', $BookName, $ISBN, $PublishHouse, $Author, $ReservedUserID, $ReturnReq);
+    ', $BookName, $ISBN, $PublishHouse, $Author, $ReservePersonnel, $ReturnReq, $ReturnDueDate);
+
   }
 
   echo sprintf('

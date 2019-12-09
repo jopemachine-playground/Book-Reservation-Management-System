@@ -51,29 +51,24 @@ function reserve(reserveBtn){
   let ISBNStr = reserveBtn.prev().prev().children(".ISBN").html().split(": ")[1];
   let canReserve = reserveBtn.prev().prev().children(".canReserve").html().split(": ")[1];
 
-  if(canReserve === "예약 가능"){
-    $.ajax({
-      type: "POST",
-      url : "../../Action/CustomerService/ReserveAction.php",
+  $.ajax({
+    type: "POST",
+    url : "../../Action/CustomerService/ReserveAction.php",
 
-      data: {
-        ISBN: ISBNStr
-      },
+    data: {
+      ISBN: ISBNStr
+    },
 
-      success : function(data, status, xhr) {
-        console.log("예약 성공");
-        alert("예약 성공했습니다.");
-        location.reload();
-      },
+    success : function(data, status, xhr) {
+      console.log("예약 성공");
+      alert("예약 성공했습니다.");
+      location.reload();
+    },
 
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
-      }
-    });
-  }
-  else{
-    alert("이미 예약중인 도서입니다!");
-  }
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.log("Ajax 전송에 실패했습니다!" + jqXHR.responseText);
+    }
+  });
 }
 
 function search(){

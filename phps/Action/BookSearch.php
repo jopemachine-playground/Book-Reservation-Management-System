@@ -21,7 +21,7 @@
 
   if($SearchWithISBN === "true"){
     $searchBook = "
-      SELECT *
+      SELECT *, count(reservation.ISBN) AS ReservePersonnel
       FROM book
       LEFT OUTER JOIN (
         SELECT *
@@ -32,11 +32,13 @@
       LEFT OUTER JOIN reservation
       ON book.ISBN = reservation.ISBN
       WHERE book.ISBN LIKE \"%". $Content . "%\"
+      GROUP BY book.ISBN
+      ORDER BY book.ISBN
     ";
   }
   else {
     $searchBook = "
-      SELECT *
+      SELECT *, count(reservation.ISBN) AS ReservePersonnel
       FROM book
       LEFT OUTER JOIN (
         SELECT *
@@ -47,9 +49,11 @@
       LEFT OUTER JOIN reservation
       ON book.ISBN = reservation.ISBN
       WHERE book.Name LIKE \"%". $Content . "%\"
+      GROUP BY book.ISBN
+      ORDER BY book.ISBN
     ";
   }
-
+  
   $resComponent = "";
 
   $searchRes = mysqli_query($connect_object, $searchBook) or die("Error Occured in Searching Data to DB");
@@ -71,20 +75,13 @@
   while($oneBook = mysqli_fetch_array($searchRes)){
 
     $BorrowingUserID = $oneBook[5];
-    $isBooking = $oneBook[12];
+    $ReservePersonnel = $oneBook[15];
 
     if(empty($BorrowingUserID)) {
       $BorrowingUserID = "대출 가능";
     }
     else {
       $BorrowingUserID = "대출 중";
-    }
-
-    if(isset($isBooking)) {
-      $isBooking = "예약 중";
-    }
-    else {
-      $isBooking = "예약 가능";
     }
 
     $resComponent .= sprintf('
@@ -95,12 +92,12 @@
           <div>출판사: %s</div>
           <div>저자: %s</div>
           <div class="canBorrow">대출 가능 여부: %s</div>
-          <div class="canReserve">현재 예약 여부: %s</div>
+          <div class="canReserve">예약 중인 인원: %s</div>
         </div>
         <button type="submit" class="btn btn-white btn-block" style="" onclick="borrow($(this))">대출</button>
         <button type="submit" class="btn btn-white btn-block" style="margin-bottom: 35px;" onclick="reserve($(this))">예약</button>
       </div>
-    ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $BorrowingUserID, $isBooking);
+    ', $oneBook[1], $oneBook[0], $oneBook[2], $oneBook[3], $BorrowingUserID, $ReservePersonnel);
   }
 
   echo $resComponent;
