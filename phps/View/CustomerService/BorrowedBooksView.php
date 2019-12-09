@@ -42,6 +42,16 @@
 
   $resComponent = "";
 
+  if(mysqli_num_rows($searchRes) < 1){
+    $resComponent = sprintf('
+      <div class="list-group">
+        <div class="BookInfo" class="list-group-item">
+          현재 대출한 도서가 없습니다.
+        </div>
+      </div>
+    ');
+  }
+
   while($oneBook = mysqli_fetch_array($searchRes)){
 
     $ISBN = $oneBook[0];

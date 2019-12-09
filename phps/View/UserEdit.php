@@ -54,7 +54,7 @@
   <nav id="FixedNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
 
       <!-- navbar-brand는 brand를 나타내는 일종의 강조 표시 -->
-      <a class="navbar-brand" href="#"><img src="../../img/smile.svg" style="margin-right: 10px;">회원 정보 수정</a>
+      <a class="navbar-brand" href="#"><img src="../../img/book-open.svg" style="margin-right: 10px;">회원 정보 수정</a>
 
       <!-- 창 너비에 따라 버튼이 미디어 쿼리로, 두 종류로 나뉜다. -->
       <!-- 아래의 버튼은 창이 작을 때, 핸드폰이나 태블릿 같은 환경에서 사용할 버튼 및 a 태그 들이다.-->
@@ -88,16 +88,6 @@
 
     <!-- lead는 강조 표시 및 글자 크기를 키우는 역할을 함 -->
     <p class="lead" style="font-size: 60px;">User Info Edit</p>
-
-    <!-- alert는 알림창이란 뜻. -->
-    <!-- close 클래스를 지닌 버튼을 클릭하면 alert창이 fade out 된다. -->
-    <div class="alert alert-light alert-dismissible fade show">
-      <button type="button" class="close" aria-label="Close" data-dismiss="alert">
-        <!-- &times 엔터티는 x 버튼처럼 사용할 수 있음 -->
-        <span aria-hidden="true">&times;</span>
-      </button>
-      <p class="lead" style="font-size: 14px; color: #4c4c4c;"><strong>* </strong> 란은 필수입니다.</p>
-    </div>
 
     <!-- 파일을 함께 전송하므로, enctype은 multipart/form-data 여야 한다 -->
     <!-- SubmitButtonClicked()가 true를 반환하는 경우에만 서버로 데이터를 전송한다 -->
