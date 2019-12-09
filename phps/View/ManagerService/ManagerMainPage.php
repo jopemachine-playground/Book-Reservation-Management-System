@@ -92,6 +92,7 @@
             <a id="Manager-deleteBook" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">등록 도서 삭제</a>
             <a id="Manager-customerInfo" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">회원 정보 수정</a>
             <a id="Manager-customerWithdrawal" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">회원 강제 탈퇴</a>
+            <a id="Manager-topten" href="#" class="list-group-item sideButton" onclick="selectButtons(this.id)">가장 대출을 많이한 회원</a>
           </div>
         </div>
 

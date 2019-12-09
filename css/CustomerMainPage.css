@@ -11,6 +11,9 @@ a.navbar-brand {
 .sizeUpOnHover:hover {
   transform: scale(1.35); }
 
+.BookInfo{
+  margin-bottom: 30px; }
+
 #FixedNavbar {
   border-bottom: #f8fc25 3px solid;
   background-color: #333333 !important; }

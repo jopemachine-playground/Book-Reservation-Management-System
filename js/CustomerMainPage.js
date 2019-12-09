@@ -108,7 +108,7 @@ function reqReturn(retBtn){
 
     success : function(data, status, xhr) {
       console.log("반납 성공");
-      alert("책 반납에 성공했습니다!");
+      alert("반납 요청에 성공했습니다!");
       location.reload();
     },
     error: function(jqXHR, textStatus, errorThrown) {

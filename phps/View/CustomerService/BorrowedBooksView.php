@@ -57,7 +57,7 @@
       $ReservedUserID = "예약 중인 유저: " . $oneBook[10];
     }
 
-    if($ReturnReq === 0) {
+    if($ReturnReq === "0") {
       $ReturnReq = "false";
     }
     else {
