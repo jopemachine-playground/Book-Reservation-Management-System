@@ -18,6 +18,14 @@ Ruby Sass 3.7.4
 
 ## 회원 페이지 Screen Shots
 
+- 로그인
+<img src="screenshots/customer/login.png">
+<br>
+
+- 회원가입
+<img src="screenshots/customer/signup.png">
+<br>
+
 - 회원정보 수정
 <img src="screenshots/customer/userEdit.png">
 <br>
