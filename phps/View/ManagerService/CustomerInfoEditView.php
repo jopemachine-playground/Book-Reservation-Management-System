@@ -25,7 +25,7 @@
           <label>이름</label>
 
           <div class="form-group">
-              <input id="Name" type="text" name="Name" class="form-control" placeholder="이름">
+            <input id="Name" type="text" name="Name" class="form-control" placeholder="이름">
           </div>
 
           <div class="form-group">
@@ -40,7 +40,11 @@
 
           <div class="form-group">
             <label for="Position">직위</label>
-            <input id="PhoneNumber" type="text" name="Position" class="form-control" placeholder="교직원, 학부생, 대학원생">
+            <select id="Position" class="input-large form-control" name="Position">
+              <option value="학부생" selected="selected">학부생</option>
+              <option value="교직원">교직원</option>
+              <option value="대학원생">대학원생</option>
+            </select>
           </div>
 
           <button type="submit" class="btn btn-dark btn-block btn-lg" style="margin-top: 120px;">정보 수정</button>

@@ -113,7 +113,6 @@
 
       <br>
 
-      <!-- 이름 란은 DB에 성과 이름이 합쳐져 기록됨 -->
       <label>이름</label>
       <div class="form-group">
           <input id="Name" value="<?=$Name;?>" type="text" name="Name" class="form-control" placeholder="이름">
@@ -131,7 +130,11 @@
 
       <div class="form-group">
         <label for="Position">직위</label>
-        <input id="PhoneNumber" value="<?=$Position;?>" type="text" name="Position" class="form-control" placeholder="교직원, 학부생, 대학원생">
+        <select id="Position" class="input-large form-control" name="Position">
+          <option value="학부생" selected="selected">학부생</option>
+          <option value="교직원">교직원</option>
+          <option value="대학원생">대학원생</option>
+        </select>
       </div>
 
       <!-- btn-block을 붙이면 버튼이 container 너비에 가득차게 됨 -->
