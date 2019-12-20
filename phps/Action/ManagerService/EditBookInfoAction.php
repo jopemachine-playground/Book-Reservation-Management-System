@@ -23,7 +23,7 @@
     UPDATE book SET
       Name = '$Name',
       PublishedHouse = '$PublishedHouse',
-      Author = '$Author',
+      Author = '$Author'
       WHERE ISBN = '$ISBN'
   ";
 

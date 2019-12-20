@@ -34,4 +34,4 @@
 
   echo ("<script language=javascript>alert('정보 수정이 완료되었습니다!')</script>");
 
-  echo ("<script>location.href='../View/CustomerService/CustomerMainPage.php';</script>");
+  echo ("<script>location.href='../../View/CustomerService/CustomerMainPage.php';</script>");
